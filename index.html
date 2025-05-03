@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsurAI - AI-Powered Insurance Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2366f0;
+            --dark: #111827;
+            --light-bg: #f0f5ff;
+            --text: #333;
+            --light-text: #6b7280;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        
+        /* Insur text */
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+        
+        /* AI chat bubble */
+        .logo-icon {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-ai {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--dark);
+            color: var(--white);
+            border: none;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--dark);
+        }
+        
+        .btn-primary:hover {
+            background-color: #000;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-images {
+            flex: 1;
+            max-width: 900px;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            /* background-color: #e1eaff; */
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 900px;
+            min-height: 400px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: transparent;
+            border: none;
+        }
+        
+        .hero-video {
+            flex: 1;
+            max-width: 500px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            aspect-ratio: 16/9;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-video video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-card {
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 54px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+        
+        h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+        
+        .feature-list {
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #e1eaff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+        
+        .card-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .placeholder {
+            height: 12px;
+            background-color: #eee;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+        
+        .placeholder.short {
+            width: 70%;
+        }
+        
+        .card-footer {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .card-tag {
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: #e1eaff;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h2 {
+            font-size: 42px;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 15px;
+        }
+        
+        .toggle {
+            background-color: var(--dark);
+            border-radius: 30px;
+            padding: 5px;
+            display: inline-flex;
+            min-width: 240px;
+        }
+        
+        .toggle-option {
+            padding: 8px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .toggle-option.active {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--primary);
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .plan-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .plan-description {
+            color: var(--light-text);
+            margin-bottom: 24px;
+        }
+        
+        .plan-price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .plan-billing {
+            color: var(--light-text);
+            margin-bottom: 24px;
+        }
+        
+        .plan-features {
+            margin-top: 24px;
+        }
+        
+        .plan-features h4 {
+            margin-bottom: 16px;
+            color: var(--light-text);
+        }
+
+        /* Solutions Section */
+        .solutions {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .solutions h2 {
+            font-size: 42px;
+            color: var(--dark);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .solutions h3 {
+            font-size: 28px;
+            color: var(--dark);
+            margin: 40px 0 20px;
+        }
+
+        .solutions p {
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .solutions ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .solutions li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 16px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .solutions li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .solutions strong {
+            color: var(--dark);
+        }
+
+        /* Early Access Section */
+        .early-access {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a4fc4 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .early-access h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .early-access p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .benefit-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .signup-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            font-size: 16px;
+        }
+
+        .signup-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .signup-form .btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background: var(--white);
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signup-form .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero-images, .hero-image {
+                max-width: 100%;
+                min-height: 220px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 8px;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero-content {
+                gap: 10px;
+            }
+            .hero-image {
+                min-height: 140px;
+            }
+            .feature-list {
+                margin: 20px 0;
+            }
+            .pricing, .solutions, .early-access {
+                padding: 40px 0;
+            }
+            .product-cards, .benefits-list {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-wrapper">
+                    <span class="logo-text">Insur</span>
+                    <div class="logo-icon">AI</div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1><span>AI-Powered</span><br>Insurance Solutions</h1>
+                    <p>Transform your insurance operations with our cutting-edge AI tools designed specifically for the insurance industry. Reduce costs, improve accuracy, and enhance customer satisfaction.</p>
+                </div>
+                <div class="hero-images">
+                    <div class="hero-image">
+                        <img src="images/Broker Systems.jpg" alt="Broker Systems Interface" style="width:100%;height:auto;object-fit:contain;border-radius:18px;box-shadow:0 4px 24px 0 rgba(0,0,0,0.08);">
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>Seamlessly Integrating AI with Your Existing Insurance Ecosystem</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>AI-Driven Intelligence for Smarter Insurance Insights</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>Elevating Accuracy with Advanced Data Extraction Techniques</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions">
+        <div class="container">
+            <h2>Transforming Insurance with AI-Powered Solutions</h2>
+            <p>At <strong>InsurAI</strong>, we revolutionize how insurance professionals interact with their systems. Our cutting-edge solutions leverage intuitive chat interfaces and powerful language models to bridge the gap between you and your software—making your workflow faster, smarter, and more natural than ever before.</p>
+
+            <h3>Why Choose Us?</h3>
+            <ul>
+                <li><strong>Effortless Communication:</strong> Say goodbye to complicated commands and technical jargon. Our platform enables you to communicate with insurance software using simple, natural language, just like talking to a colleague.</li>
+                <li><strong>Save Time:</strong> With intelligent automation and a streamlined interface, we dramatically reduce the time it takes to process applications, retrieve information, and complete tasks.</li>
+                <li><strong>User Friendly:</strong> No steep learning curves or complex setups. Our tools are designed to help your team get up and running in no time, empowering them to work efficiently from day one.</li>
+                <li><strong>Quick Deployment:</strong> Deploy our solutions seamlessly across your organization. Our user-friendly approach ensures minimal downtime and immediate productivity gains.</li>
+            </ul>
+
+            <h3>How It Works</h3>
+            <ul>
+                <li><strong>Language Model Integration:</strong> Our advanced language models are fine-tuned for the insurance industry, ensuring accurate and meaningful responses. Whether you're seeking detailed policy insights or complex calculations, we've got you covered.</li>
+                <li><strong>Interactive Chat Interface:</strong> Navigate your insurance software effortlessly with an AI-powered chat assistant that understands and executes your requests. From retrieving policy details to processing claims, it's all at your fingertips.</li>
+                <div style="margin: 30px auto; text-align: center; max-width: 800px;">
+                    <img src="images/Screenshot 2025-05-02 203233.png" alt="Interactive Chat Interface" style="width:100%;height:auto;border-radius:12px;box-shadow:0 4px 24px 0 rgba(0,0,0,0.08);">
+                </div>
+            </ul>
+
+            <h3>Empowering Your Insurance Teams</h3>
+            <p>We believe in simplifying the complexities of insurance workflows. By combining state-of-the-art AI technologies with an unwavering focus on user experience, we help businesses:</p>
+            <ul>
+                <li>Reduce operational costs.</li>
+                <li>Improve decision-making accuracy.</li>
+                <li>Enhance customer satisfaction through faster and clearer communication.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Early Access Section -->
+    <section class="early-access">
+        <div class="container">
+            <h2>🚀 Be the First to Experience the Future of Insurance</h2>
+            <p>InsurAI is launching two revolutionary AI-powered tools—PolicyBot and Quotex—designed to transform the way insurance professionals work.</p>
+
+            <div class="product-cards">
+                <div class="product-card">
+                    <h3>🔍 PolicyBot</h3>
+                    <p>Your intelligent assistant for policy insights. Navigate insurance documents effortlessly using natural language.</p>
+                </div>
+                <div class="product-card">
+                    <h3>💡 Quotex</h3>
+                    <p>Get smarter, faster insurance quotes with a conversational interface that connects directly to multiple broking systems.</p>
+                </div>
+            </div>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <h4>Explore AI-driven insurance workflows</h4>
+                    <p>Experience the future of insurance technology firsthand</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Receive exclusive product updates</h4>
+                    <p>Stay ahead with early access to new features</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Shape the future of insurance tech</h4>
+                    <p>Your feedback will help shape our products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="founders" style="background: var(--light-bg); padding: 60px 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: var(--primary); margin-bottom: 40px;">Meet the Team</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+                <div style="flex: 1 1 220px; max-width: 260px;">
+                    <div style="width: 140px; height: 140px; margin: 0 auto 20px; border-radius: 50%; background: #e1eaff; display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--primary); font-weight: 700;">S</div>
+                    <div style="font-size: 20px; font-weight: 700; color: var(--dark);">Srinath Shiv Kumar, PhD</div>
+                    <div style="font-size: 16px; color: var(--light-text);">Co-Founder & CTO</div>
+                    <p style="font-size: 14px; color: var(--text); margin-top: 12px;">Sri is our CTO, a seasoned AI leader with a strong history of deploying cutting-edge machine learning solutions. His experience includes building the AI platform at Trunk Tools and key AI roles at Evolon and SewerAI. Holding a PhD from Purdue University, Sri's deep expertise in areas like LLMs and PyTorch will drive our technical vision.</p>
+                </div>
+                <div style="flex: 1 1 220px; max-width: 260px;">
+                    <div style="width: 140px; height: 140px; margin: 0 auto 20px; border-radius: 50%; background: #e1eaff; display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--primary); font-weight: 700;">D</div>
+                    <div style="font-size: 20px; font-weight: 700; color: var(--dark);">Dylan Rodricks CPA</div>
+                    <div style="font-size: 16px; color: var(--light-text);">Co-Founder & CEO</div>
+                    <p style="font-size: 14px; color: var(--text); margin-top: 12px;">Dylan Rodricks brings seven years of direct experience as an insurance broker at Resilium and Steadfast, providing key insights into the challenges this app solves. His passion for coding and machine learning allows him to uniquely bridge insurance knowledge with innovative tech solutions.</p>
+                </div>
+                <div style="flex: 1 1 220px; max-width: 260px;">
+                    <div style="width: 140px; height: 140px; margin: 0 auto 20px; border-radius: 50%; background: #e1eaff; display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--primary); font-weight: 700;">S</div>
+                    <div style="font-size: 20px; font-weight: 700; color: var(--dark);">Dr Sohm Shivkumar</div>
+                    <div style="font-size: 16px; color: var(--light-text);">Co-Founder & COO</div>
+                    <p style="font-size: 14px; color: var(--text); margin-top: 12px;">A leader in healthcare and technology for over a decade, Dr. Shom Shivkumar has a proven track record of driving digital transformation. He led hospital automation at Sofscript as Managing Director and built AI solutions at his venture, PipeRx.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" style="background: var(--white); padding: 60px 0; border-top: 1px solid #e1eaff;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: var(--primary); margin-bottom: 16px;">Contact Us</h2>
+            <p style="font-size: 18px; color: var(--light-text); margin-bottom: 12px;">Have questions or want to get in touch?</p>
+            <a href="mailto:contact@insurai.com.au" style="font-size: 20px; color: var(--primary); text-decoration: underline; font-weight: 600;">contact@insurai.com.au</a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Video-related code removed
+        });
+    </script>
+</body>
+</html> 
