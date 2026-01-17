@@ -1,0 +1,119 @@
+.wrap { 
+  display: none; 
+  position: relative; 
+}
+
+.burger {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+
+.burger:hover {
+  background: var(--light-bg);
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  width: 18px;
+  background: var(--dark);
+  margin: 2px 0;
+  transition: all 0.2s ease;
+}
+
+.panel {
+  position: absolute;
+  right: 0;
+  top: 52px;
+  width: min(320px, calc(100vw - 40px));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  backdrop-filter: blur(14px);
+  padding: 12px;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  gap: 10px;
+  z-index: 60;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel a {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--light-bg);
+  color: var(--light-text);
+  font-weight: 650;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.panel a:hover { 
+  color: var(--dark); 
+  background: rgba(35, 102, 240, 0.05);
+}
+
+.cta {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.btnPrimary, .btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btnPrimary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 12px 30px rgba(35, 102, 240, 0.22);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(35, 102, 240, 0.3);
+}
+
+.btnGhost {
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--dark);
+}
+
+.btnGhost:hover {
+  background: rgba(35, 102, 240, 0.05);
+  border-color: var(--primary);
+}
+
+@media (max-width: 760px) {
+  .wrap { 
+    display: block; 
+  }
+}

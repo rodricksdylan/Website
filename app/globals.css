@@ -1,0 +1,207 @@
+:root {
+  /* Original light theme colors */
+  --primary: #2366f0;
+  --primary-dark: #1a4fc4;
+  --primary-light: #4d85f5;
+  --dark: #111827;
+  --light-bg: #f0f5ff;
+  --light-bg-gradient: linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%);
+  --text: #333;
+  --light-text: #6b7280;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  
+  /* New variables for Atlassian layout (using light theme colors) */
+  --bg: var(--light-bg);
+  --muted: var(--light-text);
+  --line: rgba(0, 0, 0, 0.08);
+  --accent: var(--primary);
+  --accent2: var(--primary);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  --radius: 18px;
+  --max: 1120px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--light-bg-gradient);
+  color: var(--text);
+  line-height: 1.6;
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Modern animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enhanced hover effects */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Product image hover effect */
+.product-image-wrapper {
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-image {
+  transition: transform 0.3s ease;
+}
+
+/* Responsive typography and layout */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  h1 {
+    font-size: 36px !important;
+  }
+  
+  h2 {
+    font-size: 32px !important;
+  }
+  
+  .hero-content {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  .hero-images {
+    max-width: 100% !important;
+  }
+  
+  .hero-image {
+    min-height: 220px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  h1 {
+    font-size: 28px !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+  }
+  
+  section {
+    padding: 40px 0 !important;
+  }
+  
+  .hero {
+    padding: 40px 0 !important;
+  }
+  
+  .hero-content {
+    gap: 10px !important;
+  }
+  
+  .hero-image {
+    min-height: 140px !important;
+  }
+}
