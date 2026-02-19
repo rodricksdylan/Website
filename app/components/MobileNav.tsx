@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "./MobileNav.module.css";
 
@@ -39,10 +40,11 @@ export function MobileNav() {
 
       {open && (
         <div className={styles.panel} ref={panelRef}>
-          <a href="#products" onClick={() => setOpen(false)}>Products</a>
-          <a href="#why" onClick={() => setOpen(false)}>Why InsurAI</a>
-          <a href="#how" onClick={() => setOpen(false)}>How it works</a>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          <Link href="/#products" onClick={() => setOpen(false)}>Products</Link>
+          <Link href="/#why" onClick={() => setOpen(false)}>Why InsurAI</Link>
+          <Link href="/#how" onClick={() => setOpen(false)}>How it works</Link>
+          <Link href="/#contact" onClick={() => setOpen(false)}>Contact</Link>
+          <Link href="/media" onClick={() => setOpen(false)}>In the Media</Link>
 
           <div className={styles.cta}>
             <a
@@ -54,9 +56,9 @@ export function MobileNav() {
             >
               View ConsentAI
             </a>
-            <a className={styles.btnPrimary} href="#contact" onClick={() => setOpen(false)}>
+            <Link className={styles.btnPrimary} href="/#contact" onClick={() => setOpen(false)}>
               Book a demo
-            </a>
+            </Link>
           </div>
         </div>
       )}

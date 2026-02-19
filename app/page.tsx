@@ -1,52 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./page.module.css";
-import { ProductCard } from "./components/ProductCard";
-import { MobileNav } from "./components/MobileNav";
+import { SiteLayout } from "./components/SiteLayout";
 import ProductShowcase from "./components/ProductShowcase";
 import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
 
 export default function HomePage() {
   return (
-    <div className={styles.page}>
-      {/* Sticky Topbar */}
-      <header className={styles.topbar}>
-        <div className={styles.container}>
-          <div className={styles.topbarInner}>
-            <Link href="/" className={styles.brand} aria-label="InsurAI home">
-              <span className={styles.brandMark}>Insur</span>
-              <span className={`${styles.brandMark} ${styles.brandAccent}`}>AI</span>
-            </Link>
-
-            <nav className={styles.nav} aria-label="Primary">
-              <a href="#products">Products</a>
-              <a href="#why">Why InsurAI</a>
-              <a href="#how">How it works</a>
-              <a href="#contact">Contact</a>
-            </nav>
-
-            <div className={styles.actions}>
-              <Link
-                className={`${styles.btn} ${styles.btnGhost}`}
-                href="https://www.consentai.com.au/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View ConsentAI
-              </Link>
-              <a className={`${styles.btn} ${styles.btnPrimary}`} href="#contact">
-                Book a demo
-              </a>
-
-              {/* Client-only mobile nav */}
-              <MobileNav />
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <main>
+    <SiteLayout currentPage="home">
+      <>
         {/* Hero */}
         <section className={styles.hero}>
           <div className={styles.container}>
@@ -240,32 +202,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className={styles.footer}>
-          <div className={styles.container}>
-            <div className={styles.footerInner}>
-              <div>
-                <div className={styles.brandFooter}>
-                  <span className={styles.brandMark}>Insur</span>
-                  <span className={`${styles.brandMark} ${styles.brandAccent}`}>AI</span>
-                </div>
-                <p className={`${styles.fine} ${styles.muted}`}>AI-powered insurance solutions built for broker workflows.</p>
-              </div>
-
-              <div className={styles.footerLinks}>
-                <a href="#products">Products</a>
-                <a href="#why">Why</a>
-                <a href="#how">How</a>
-                <a href="#contact">Contact</a>
-              </div>
-
-              <div className={`${styles.fine} ${styles.muted}`}>
-                © {new Date().getFullYear()} InsurAI Pty Ltd. All rights reserved.
-              </div>
-            </div>
-          </div>
-        </footer>
-      </main>
-    </div>
+      </>
+    </SiteLayout>
   );
 }

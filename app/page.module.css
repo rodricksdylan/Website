@@ -133,6 +133,11 @@
   color: var(--dark); 
 }
 
+.nav a.navActive {
+  color: var(--dark);
+  font-weight: 700;
+}
+
 .actions {
   display: flex;
   gap: 10px;
