@@ -135,7 +135,7 @@ export default function TermsPage() {
 
           <section className={styles.section}>
             <h2>13. Governing Law</h2>
-            <p>These Terms are governed by the laws of Tasmania, Australia.</p>
+            <p>These Terms are governed by the laws of Australia.</p>
           </section>
 
           <section className={styles.section}>
