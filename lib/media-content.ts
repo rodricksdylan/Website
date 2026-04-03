@@ -16,6 +16,15 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    id: 'podcast-insight-mar26',
+    title: 'Insurtech Live 26 Event Special Feature',
+    date: '2026-03-06',
+    summary: 'In this special feature INsight podcast we cover the highlights, insights, foresights and terrabites from Insurtech Live 26, brought to you by Insurtech Australia.',
+    url: 'https://open.spotify.com/episode/4fM7U6qkcTZDyG3BGKeLBH?si=tC9mTrSXS8uKiDEJR-ugbg',
+    source: 'INsight - Insurance News (Spotify)',
+    imageUrl: 'https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f85b53495f9f54dd7e5c177fd',
+  },
+  {
     id: '1',
     title: 'Brokers benefit from natural-language AI assistants',
     date: '2026-02-11',
@@ -30,7 +39,6 @@ export const newsItems: NewsItem[] = [
     summary: 'Insurtech Australia’s InsurtechLIVE26 in Sydney – InsurAI took out the #PitchLIVE26 winner’s gong alongside fellow finalists Crikey AI, PropertyExpert Global and Voxworks.',
     url: 'https://www.linkedin.com/posts/insurtechlive26-pitchlive26-insurtechlive26-ugcPost-7430122247010562048-e89t?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA3O8aUBqAGTYXThMjYhtnI1jpyhQhHAo3A',
     source: 'Insurtech Australia (LinkedIn)',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/D5622AQGt73rL3J7QCA/feedshare-shrink_800/B56Zx0YzC_HYAg-/0/1771479183817?e=1773273600&v=beta&t=EFI5FUGldkpdtuDyus_dacIVEhtkM4hOIN0BwdMVNCY',
   },
   {
     id: '3',
@@ -39,7 +47,6 @@ export const newsItems: NewsItem[] = [
     summary: 'Co-founder Dylan Rodricks on winning PitchLIVE26: "Had an absolute blast pitching live today. It\'s an honor to be recognized, especially among such a talented group of innovators. Deeply grateful to Insurtech Australia for the platform and the constant support."',
     url: 'https://www.linkedin.com/posts/dylan-rodricks-03170265_insurtechlive26-insurancetech-activity-7429769547232133121-pIPG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA3O8aUBqAGTYXThMjYhtnI1jpyhQhHAo3A',
     source: 'Dylan Rodricks (LinkedIn)',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/D5622AQEbsxQoTi2UZQ/feedshare-shrink_800/B56ZxvYCBaIIAg-/0/1771395096923?e=1773273600&v=beta&t=Am_CzdBZTUd_Tm1uBmvyhE7rSvCcnUuX-l7GACYxgDg',
   },
   {
     id: '4',

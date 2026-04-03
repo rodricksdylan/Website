@@ -6,7 +6,9 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'www.insurancenews.com.au', pathname: '/**' },
       { protocol: 'https', hostname: 'insurancenews.com.au', pathname: '/**' },
-      { protocol: 'https', hostname: 'media.licdn.com', pathname: '/**' },
+
+      { protocol: 'https', hostname: 'image-cdn-ak.spotifycdn.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'i.scdn.co', pathname: '/**' },
     ],
   },
   // Optimize for Vercel

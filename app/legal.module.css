@@ -1,0 +1,89 @@
+.legalPage {
+  padding: 60px 0 80px;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.meta {
+  font-size: 14px;
+  color: var(--light-text);
+  margin-bottom: 40px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 14px 0 6px;
+}
+
+.section p {
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.section ul {
+  padding-left: 24px;
+  margin-bottom: 10px;
+}
+
+.section li {
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.section a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.section a:hover {
+  text-decoration: underline;
+}
+
+.notice {
+  background: var(--light-bg);
+  border-left: 3px solid var(--primary);
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.notice ul {
+  margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+  .legalPage {
+    padding: 40px 0 60px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}

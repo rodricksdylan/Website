@@ -85,6 +85,8 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
               <Link href="/#how">How</Link>
               <Link href="/#contact">Contact</Link>
               <Link href="/media">In the Media</Link>
+              <Link href="/privacy">Privacy</Link>
+              <Link href="/terms">Terms</Link>
             </div>
 
             <div className={`${styles.fine} ${styles.muted}`}>

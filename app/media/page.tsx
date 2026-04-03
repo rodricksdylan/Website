@@ -43,13 +43,22 @@ export default function MediaPage() {
                   <article key={item.id} className={styles.card}>
                     {item.imageUrl && (
                       <div className={styles.cardImageWrap}>
-                        <Image
-                          src={item.imageUrl}
-                          alt=""
-                          fill
-                          className={styles.cardImage}
-                          sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw"
-                        />
+                        {item.imageUrl.includes("spotifycdn.com") || item.imageUrl.includes("scdn.co") ? (
+                          <img
+                            src={item.imageUrl}
+                            alt=""
+                            className={styles.cardImage}
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Image
+                            src={item.imageUrl}
+                            alt=""
+                            fill
+                            className={styles.cardImage}
+                            sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw"
+                          />
+                        )}
                       </div>
                     )}
                     <div className={styles.cardContent}>
