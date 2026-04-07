@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../page.module.css";
 import { MobileNav } from "./MobileNav";
 
-type CurrentPage = "home" | "media";
+type CurrentPage = "home" | "media" | "about";
 
 interface SiteLayoutProps {
   children: React.ReactNode;
@@ -33,6 +33,13 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
               </Link>
               <Link href="/#contact" className={currentPage === "home" ? undefined : ""}>
                 Contact
+              </Link>
+              <Link
+                href="/about"
+                className={currentPage === "about" ? styles.navActive : ""}
+                aria-current={currentPage === "about" ? "page" : undefined}
+              >
+                About
               </Link>
               <Link
                 href="/media"
@@ -84,6 +91,7 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
               <Link href="/#why">Why</Link>
               <Link href="/#how">How</Link>
               <Link href="/#contact">Contact</Link>
+              <Link href="/about">About</Link>
               <Link href="/media">In the Media</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>
