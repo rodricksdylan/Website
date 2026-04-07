@@ -144,6 +144,32 @@
   align-items: center;
 }
 
+/* announcement banner */
+.announcementBanner {
+  background: var(--gradient-primary);
+  color: var(--white);
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.announcementBanner a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 800;
+  transition: opacity 0.2s ease;
+}
+
+.announcementBanner a:hover {
+  opacity: 0.85;
+}
+
 /* hero */
 .hero {
   padding: 72px 0 40px;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 import { SiteLayout } from "./components/SiteLayout";
 import ProductShowcase from "./components/ProductShowcase";
@@ -9,6 +10,12 @@ export default function HomePage() {
   return (
     <SiteLayout currentPage="home">
       <>
+        {/* Announcement Banner */}
+        <div className={styles.announcementBanner}>
+          <span>InsurAI won PitchLIVE26 at Insurtech Australia!</span>
+          <Link href="/media">Read more &rarr;</Link>
+        </div>
+
         {/* Hero */}
         <section className={styles.hero}>
           <div className={styles.container}>
