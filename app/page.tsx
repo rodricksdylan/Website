@@ -12,7 +12,7 @@ export default function HomePage() {
       <>
         {/* Announcement Banner */}
         <div className={styles.announcementBanner}>
-          <span>InsurAI won PitchLIVE26 at Insurtech Australia!</span>
+          <span className={styles.bannerHighlight}>Winner — PitchLIVE26 (Insurtech Australia)</span>
           <Link href="/media">Read more &rarr;</Link>
         </div>
 

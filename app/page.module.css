@@ -146,28 +146,79 @@
 
 /* announcement banner */
 .announcementBanner {
-  background: var(--gradient-primary);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #2366f0 100%);
   color: var(--white);
   text-align: center;
-  padding: 12px 20px;
+  padding: 14px 20px;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.announcementBanner::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 80px;
+  background: radial-gradient(ellipse, rgba(35, 102, 240, 0.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.announcementBanner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  animation: shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(30%); }
+}
+
+.bannerHighlight {
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .announcementBanner a {
+  position: relative;
   color: var(--white);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  font-weight: 800;
-  transition: opacity 0.2s ease;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  transition: all 0.2s ease;
 }
 
 .announcementBanner a:hover {
-  opacity: 0.85;
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 /* hero */
