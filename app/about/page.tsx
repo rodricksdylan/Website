@@ -63,6 +63,7 @@ export default function AboutPage() {
                 width={180}
                 height={180}
                 className={styles.founderPhoto}
+                style={{ objectPosition: "center 20%" }}
               />
               <div className={styles.founderName}>Dr Sohm Shivkumar</div>
               <div className={styles.founderTitle}>Co-Founder | InsurAI</div>
