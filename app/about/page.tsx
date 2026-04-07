@@ -84,6 +84,12 @@ export default function AboutPage() {
                   processes—delivering solutions that are practical, reliable,
                   and built for industry use.
                 </p>
+                <p>
+                  Through his work at Sofscript and PipeRx, he has built and
+                  managed teams delivering workflow automation, data processing,
+                  and quality assurance at scale—bringing a strong operational
+                  focus to how systems are designed and implemented.
+                </p>
               </div>
             </div>
           </div>
