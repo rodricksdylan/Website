@@ -48,15 +48,6 @@ export function MobileNav() {
           <Link href="/media" onClick={() => setOpen(false)}>In the Media</Link>
 
           <div className={styles.cta}>
-            <a
-              className={styles.btnGhost}
-              href="https://www.consentai.com.au/"
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setOpen(false)}
-            >
-              View ConsentAI
-            </a>
             <Link className={styles.btnPrimary} href="/#contact" onClick={() => setOpen(false)}>
               Book a demo
             </Link>

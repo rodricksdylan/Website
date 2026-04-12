@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import styles from './WhySection.module.css'
+import { CpuArchitecture } from './CpuArchitecture'
 
 interface Category {
   id: string
@@ -92,14 +93,20 @@ export default function WhySection() {
 
           <div className={styles.imageBlock}>
             <div className={styles.imageWrapper}>
-              <Image
-                src={currentCategory.imageSrc}
-                alt={currentCategory.imageAlt}
-                width={1200}
-                height={675}
-                className={styles.featureImage}
-                priority={selectedCategory === categories[0].id}
-              />
+              {currentCategory.id === 'workflow' ? (
+                <div className={styles.cpuStage} aria-label={currentCategory.imageAlt}>
+                  <CpuArchitecture text="InsurAI" />
+                </div>
+              ) : (
+                <Image
+                  src={currentCategory.imageSrc}
+                  alt={currentCategory.imageAlt}
+                  width={1200}
+                  height={675}
+                  className={styles.featureImage}
+                  priority={selectedCategory === categories[0].id}
+                />
+              )}
             </div>
           </div>
         </div>

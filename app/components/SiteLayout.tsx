@@ -52,14 +52,6 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
 
             <div className={styles.actions}>
               <Link
-                className={`${styles.btn} ${styles.btnGhost}`}
-                href="https://www.consentai.com.au/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View ConsentAI
-              </Link>
-              <Link
                 className={`${styles.btn} ${styles.btnPrimary}`}
                 href={currentPage === "media" ? "/#contact" : "#contact"}
               >
