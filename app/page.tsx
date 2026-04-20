@@ -108,16 +108,6 @@ export default function HomePage() {
           titleColorCombo="policyai"
         />
 
-        <ProductShowcase
-          title="JordanAI"
-          description="An AI front-desk assistant that captures quote-ready information, answers policy questions instantly, and guides claims. Easily integrated into your website and workflow to reduce admin, eliminate document searching, and improve broker efficiency."
-          imageSrc="/images/insurance broker website.png"
-          imageAlt="JordanAI Insurance Broker Website"
-          primaryCta={{ label: "Open JordanAI", href: "https://jordan-ai-ruddy.vercel.app/", external: true }}
-          secondaryCta={{ label: "Request pricing", href: "https://jordan-ai-ruddy.vercel.app/#demo", external: true }}
-          titleColorCombo="jordanai"
-        />
-
         {/* Why */}
         <WhySection />
 
@@ -199,6 +189,15 @@ export default function HomePage() {
                   <Image
                     src="/images/Tasmanian-Proud-Partner--Pos-PRIMARY.png"
                     alt="Tasmanian Proud Partner"
+                    width={300}
+                    height={150}
+                    style={{ maxWidth: '100%', height: 'auto', objectFit: 'contain' }}
+                  />
+                </div>
+                <div className={styles.logoBox}>
+                  <Image
+                    src="/images/uac-proud-member.jpg"
+                    alt="Proud Member of the Underwriting Agencies Council"
                     width={300}
                     height={150}
                     style={{ maxWidth: '100%', height: 'auto', objectFit: 'contain' }}
