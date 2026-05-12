@@ -5,6 +5,8 @@ import { SiteLayout } from "./components/SiteLayout";
 import ProductShowcase from "./components/ProductShowcase";
 import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
+import HeroSphere from "./components/HeroSphere";
+import IconButton from "./components/IconButton";
 
 export default function HomePage() {
   return (
@@ -21,17 +23,15 @@ export default function HomePage() {
           <div className={styles.container}>
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
-                <div className={styles.pill}>Built for insurance brokers</div>
-                <h1 className={styles.h1}>AI-powered insurance workflows—without the portal hopping.</h1>
+                <h1 className={styles.h1}>
+                  AI-powered insurance workflows&mdash;without the portal hopping.
+                </h1>
                 <p className={styles.lead}>
-                  Transform your brokerage with intelligent, purpose-built tools for insurance.
-                  Improve compliance, reduce manual work, and deliver a smoother client experience.
+                  Transform your brokerage with intelligent, purpose-built tools for insurance. Improve compliance, reduce manual work, and deliver a smoother client experience.
                 </p>
 
                 <div className={styles.heroCta}>
-                  <a className={`${styles.btn} ${styles.btnPrimary}`} href="#contact">
-                    Book a demo
-                  </a>
+                  <IconButton href="#contact">Contact sales</IconButton>
                   <a className={`${styles.btn} ${styles.btnGhost}`} href="#products">
                     Explore products
                   </a>
@@ -40,28 +40,13 @@ export default function HomePage() {
                 <ul className={styles.ticks}>
                   <li>Broker systems interface</li>
                   <li>Insurance-tuned AI intelligence</li>
-                  <li>Precision document & data extraction</li>
+                  <li>Precision document &amp; data extraction</li>
                 </ul>
               </div>
 
               {/* Hero visual */}
               <div className={styles.heroVisual} aria-hidden="true">
-                <div className={styles.heroGeometricBg}>
-                  <div className={styles.heroShape1}></div>
-                  <div className={styles.heroShape2}></div>
-                  <div className={styles.heroShape3}></div>
-                  <div className={styles.heroShape4}></div>
-                </div>
-                <div className={styles.heroImageWrapper}>
-                  <Image
-                    src="/images/Broker Systems.jpg"
-                    alt="Broker Systems Interface"
-                    width={1600}
-                    height={900}
-                    className={styles.heroImage}
-                    priority
-                  />
-                </div>
+                <HeroSphere />
               </div>
             </div>
           </div>

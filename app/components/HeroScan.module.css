@@ -1,0 +1,115 @@
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.glow {
+  position: absolute;
+  inset: 10%;
+  border-radius: 24px;
+  background: radial-gradient(circle at 50% 60%,
+    rgba(35, 102, 240, 0.20) 0%,
+    rgba(35, 102, 240, 0.05) 50%,
+    transparent 75%);
+  filter: blur(40px);
+  z-index: -1;
+  animation: breathe 9s ease-in-out infinite;
+}
+
+.docBack { fill: #f6f8fd; stroke: rgba(17, 24, 39, 0.06); stroke-width: 1; }
+.docMid  { fill: #ffffff; stroke: rgba(17, 24, 39, 0.10); stroke-width: 1; }
+.docFront { fill: #fafbff; stroke: rgba(17, 24, 39, 0.08); stroke-width: 1; }
+
+.docShadow { fill: rgba(15, 23, 42, 0.07); }
+
+.headerBar  { fill: #2366f0; }
+.textLine   { fill: #d6dbe5; }
+.textLineDim { fill: #e6e9ef; }
+
+.highlight {
+  fill: #2366f0;
+  opacity: 0;
+  animation: highlight 6s ease-in-out infinite;
+}
+.highlight1 { animation-delay: 1.4s; }
+.highlight2 { animation-delay: 2.6s; }
+.highlight3 { animation-delay: 3.6s; }
+
+.scanBeam {
+  animation: scan 6s linear infinite;
+}
+
+.scanLine {
+  stroke: #2366f0;
+  stroke-width: 1.5;
+  animation: scanLine 6s linear infinite;
+}
+
+.pill {
+  opacity: 0;
+  animation: pillIn 6s ease-out infinite;
+  transform-origin: left center;
+  transform-box: fill-box;
+}
+.pill1 { animation-delay: 1.6s; }
+.pill2 { animation-delay: 2.8s; }
+.pill3 { animation-delay: 3.8s; }
+
+.pillBg   { fill: #ffffff; stroke: rgba(35, 102, 240, 0.35); stroke-width: 1; }
+.pillDot  { fill: #2366f0; }
+.pillText { fill: #1a4fc4; font: 600 9px "Inter", system-ui, sans-serif; }
+
+.cornerDot {
+  fill: rgba(35, 102, 240, 0.6);
+}
+
+@keyframes scan {
+  0%   { transform: translateY(-90px); opacity: 0; }
+  6%   { opacity: 1; }
+  94%  { opacity: 1; }
+  100% { transform: translateY(105px); opacity: 0; }
+}
+
+@keyframes scanLine {
+  0%   { transform: translateY(-90px); opacity: 0; }
+  6%   { opacity: 1; }
+  94%  { opacity: 1; }
+  100% { transform: translateY(105px); opacity: 0; }
+}
+
+@keyframes highlight {
+  0%, 100% { opacity: 0; }
+  /* each variant uses its own animation-delay to fire in sequence */
+  20%, 30% { opacity: 0.18; }
+}
+
+@keyframes pillIn {
+  0%       { opacity: 0; transform: translateX(-10px); }
+  18%      { opacity: 1; transform: translateX(0); }
+  78%      { opacity: 1; transform: translateX(0); }
+  100%     { opacity: 0; transform: translateX(4px); }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.7; transform: scale(1);    }
+  50%      { opacity: 1;   transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanBeam, .scanLine, .highlight, .pill, .glow {
+    animation: none;
+  }
+  .pill { opacity: 1; }
+}

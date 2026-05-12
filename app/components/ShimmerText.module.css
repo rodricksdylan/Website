@@ -1,0 +1,32 @@
+.shimmer {
+  background-image: linear-gradient(
+    to right,
+    currentColor 0%,
+    rgba(255, 255, 255, 0.55) 40%,
+    rgba(255, 255, 255, 0.55) 60%,
+    currentColor 100%
+  );
+  background-color: currentColor;
+  background-size: 50% 200%;
+  background-repeat: no-repeat;
+  background-position-x: 250%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerSweep 3s linear 1.5s infinite;
+}
+
+@keyframes shimmerSweep {
+  0%   { background-position-x: -100%; }
+  50%  { background-position-x: 250%; }
+  100% { background-position-x: 250%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer {
+    animation: none;
+    -webkit-text-fill-color: currentColor;
+    background-image: none;
+    background-color: transparent;
+  }
+}

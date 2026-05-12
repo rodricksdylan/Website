@@ -1,0 +1,221 @@
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+/* faint starfield across the stage */
+.stars {
+  position: absolute;
+  inset: -8%;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(99, 102, 241, 0.55), transparent 60%),
+    radial-gradient(1px 1px at 82% 24%, rgba(167, 139, 250, 0.5), transparent 60%),
+    radial-gradient(1px 1px at 28% 78%, rgba(35, 102, 240, 0.45), transparent 60%),
+    radial-gradient(1px 1px at 68% 88%, rgba(167, 139, 250, 0.4), transparent 60%),
+    radial-gradient(1.5px 1.5px at 92% 56%, rgba(255, 255, 255, 0.7), transparent 60%),
+    radial-gradient(1px 1px at 6% 62%, rgba(255, 255, 255, 0.55), transparent 60%),
+    radial-gradient(1px 1px at 44% 8%, rgba(99, 102, 241, 0.5), transparent 60%);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* atmospheric outer halo */
+.glow {
+  position: absolute;
+  inset: -6%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(139, 92, 246, 0.32) 0%,
+      rgba(99, 102, 241, 0.18) 28%,
+      rgba(35, 102, 240, 0.08) 52%,
+      transparent 70%);
+  filter: blur(32px);
+  animation: pulseGlow 7s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* the planet itself */
+.orb {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background:
+    /* subtle horizontal atmospheric banding */
+    repeating-linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.03) 6%,
+      transparent 12%,
+      rgba(15, 23, 42, 0.05) 18%,
+      transparent 24%
+    ),
+    /* deep volumetric body */
+    radial-gradient(circle at 30% 26%,
+      rgba(196, 181, 253, 0.95) 0%,
+      rgba(139, 92, 246, 0.75) 12%,
+      rgba(79, 70, 229, 0.85) 32%,
+      rgba(30, 27, 75, 0.95) 62%,
+      #0b0a2a 100%);
+  box-shadow:
+    0 0 80px 12px rgba(139, 92, 246, 0.35),
+    0 0 160px 40px rgba(35, 102, 240, 0.18),
+    inset -22px -28px 70px rgba(8, 7, 30, 0.7),
+    inset 26px 34px 70px rgba(196, 181, 253, 0.16);
+  animation: float 9s ease-in-out infinite;
+  z-index: 3;
+  overflow: hidden;
+}
+
+/* bright crescent rim light (top-left) — gives the orb a sense of being lit from a distant star */
+.orb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 26% 22%,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(196, 181, 253, 0.4) 8%,
+      rgba(255, 255, 255, 0) 22%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* slow swirl across the surface — atmospheric movement */
+.orb::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(167, 139, 250, 0.18) 18%,
+    transparent 38%,
+    rgba(99, 102, 241, 0.14) 60%,
+    transparent 82%
+  );
+  animation: spin 18s linear infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  filter: blur(6px);
+}
+
+/* hairline ring system, like a distant Saturn — sits behind the orb's front face */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ring1 {
+  width: 90%;
+  height: 90%;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 0 0 30px rgba(167, 139, 250, 0.12) inset;
+  z-index: 2;
+  animation: ringTilt 14s ease-in-out infinite;
+  transform: rotateX(72deg);
+}
+
+.ring2 {
+  width: 105%;
+  height: 105%;
+  border: 1px dashed rgba(99, 102, 241, 0.22);
+  z-index: 2;
+  animation: ringTiltReverse 18s ease-in-out infinite;
+  transform: rotateX(72deg) rotateZ(0deg);
+}
+
+/* orbiting satellite — a small bright dot tracing a path around the orb */
+.satellite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  animation: orbit 16s linear infinite;
+  pointer-events: none;
+}
+
+.satelliteDot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, rgba(196, 181, 253, 0.9) 50%, transparent 100%);
+  box-shadow:
+    0 0 16px 3px rgba(196, 181, 253, 0.85),
+    0 0 32px 6px rgba(139, 92, 246, 0.4);
+}
+
+/* twinkling sparks scattered around the orb */
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, rgba(196, 181, 253, 0.8) 50%, transparent 100%);
+  box-shadow: 0 0 10px 1px rgba(167, 139, 250, 0.7);
+  z-index: 4;
+}
+
+.spark1 { top: 10%; left: 18%; animation: twinkle 3.4s ease-in-out infinite; }
+.spark2 { top: 84%; left: 78%; animation: twinkle 4.8s ease-in-out infinite 0.9s; }
+.spark3 { top: 32%; left: 92%; animation: twinkle 3.9s ease-in-out infinite 1.7s; }
+.spark4 { top: 72%; left: 8%;  animation: twinkle 4.2s ease-in-out infinite 0.4s; }
+.spark5 { top: 6%;  left: 70%; animation: twinkle 5.2s ease-in-out infinite 2.1s; }
+
+/* animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ringTilt {
+  0%, 100% { transform: rotateX(72deg) rotateZ(0deg); }
+  50% { transform: rotateX(72deg) rotateZ(360deg); }
+}
+
+@keyframes ringTiltReverse {
+  0%, 100% { transform: rotateX(72deg) rotateZ(0deg); }
+  50% { transform: rotateX(72deg) rotateZ(-360deg); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow, .orb, .orb::after, .ring1, .ring2, .satellite,
+  .spark1, .spark2, .spark3, .spark4, .spark5 {
+    animation: none;
+  }
+}

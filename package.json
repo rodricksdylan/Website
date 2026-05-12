@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@types/nodemailer": "^7.0.5",
+    "@types/three": "^0.184.1",
     "@vercel/analytics": "^1.6.1",
     "next": "^14.2.0",
     "nodemailer": "^7.0.12",
     "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "react-dom": "^18.3.0",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

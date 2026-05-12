@@ -1,0 +1,77 @@
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.glow {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(35, 102, 240, 0.22) 0%,
+    rgba(35, 102, 240, 0.08) 40%,
+    transparent 70%);
+  filter: blur(28px);
+  z-index: -1;
+  animation: breathe 8s ease-in-out infinite;
+}
+
+.blobA { animation: driftA 11s ease-in-out infinite; transform-origin: center; }
+.blobB { animation: driftB 13s ease-in-out infinite; transform-origin: center; }
+.blobC { animation: driftC 9s  ease-in-out infinite; transform-origin: center; }
+.blobD { animation: driftD 15s ease-in-out infinite; transform-origin: center; }
+.blobE { animation: driftE 12s ease-in-out infinite; transform-origin: center; }
+
+.accent {
+  animation: accentPulse 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes driftA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(36px, -28px) scale(1.06); }
+}
+@keyframes driftB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-30px, 24px) scale(0.94); }
+}
+@keyframes driftC {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-22px, -34px) scale(1.08); }
+}
+@keyframes driftD {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(28px, 30px) scale(0.96); }
+}
+@keyframes driftE {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(18px, -18px) scale(1.04); }
+}
+
+@keyframes accentPulse {
+  0%, 100% { transform: scale(1) rotate(0deg);   opacity: 0.95; }
+  50%      { transform: scale(1.08) rotate(8deg); opacity: 1; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.7;  transform: scale(1);    }
+  50%      { opacity: 1;    transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blobA, .blobB, .blobC, .blobD, .blobE, .accent, .glow {
+    animation: none;
+  }
+}

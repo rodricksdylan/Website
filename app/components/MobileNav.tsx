@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "./MobileNav.module.css";
+import IconButton from "./IconButton";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -48,9 +49,9 @@ export function MobileNav() {
           <Link href="/media" onClick={() => setOpen(false)}>In the Media</Link>
 
           <div className={styles.cta}>
-            <Link className={styles.btnPrimary} href="/#contact" onClick={() => setOpen(false)}>
-              Book a demo
-            </Link>
+            <IconButton href="/#contact" onClick={() => setOpen(false)}>
+              Contact sales
+            </IconButton>
           </div>
         </div>
       )}

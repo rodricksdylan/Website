@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import { MobileNav } from "./MobileNav";
+import IconButton from "./IconButton";
 
 type CurrentPage = "home" | "media" | "about";
 
@@ -51,12 +52,9 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
             </nav>
 
             <div className={styles.actions}>
-              <Link
-                className={`${styles.btn} ${styles.btnPrimary}`}
-                href={currentPage === "media" ? "/#contact" : "#contact"}
-              >
-                Book a demo
-              </Link>
+              <IconButton href={currentPage === "media" ? "/#contact" : "#contact"}>
+                Contact sales
+              </IconButton>
               <MobileNav />
             </div>
           </div>
