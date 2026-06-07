@@ -6,13 +6,13 @@
   padding: 4px 56px 4px 24px;
   border-radius: 9999px;
   border: none;
-  background: var(--gradient-primary);
+  background: var(--dark);
   color: var(--white);
   font: 600 14px/1 var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(35, 102, 240, 0.22);
+  box-shadow: var(--shadow-sm);
   transition:
     padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s ease,
@@ -21,7 +21,7 @@
 
 .iconBtn:hover {
   padding: 4px 24px 4px 56px;
-  box-shadow: 0 16px 40px rgba(35, 102, 240, 0.32);
+  box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
 
@@ -39,7 +39,7 @@
   height: 40px;
   border-radius: 50%;
   background: var(--white);
-  color: var(--primary-dark);
+  color: var(--dark);
   display: inline-flex;
   align-items: center;
   justify-content: center;
