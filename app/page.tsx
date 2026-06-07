@@ -24,8 +24,8 @@ export default function HomePage() {
         <section className={styles.taglineBand}>
           <div className={styles.container}>
             <h2 className={styles.tagline}>
-              InsurAI is an insurance-tuned AI platform{" "}
-              <span className={styles.dim}>designed to help you run a smarter brokerage.</span>
+              InsurAI is an orchestration platform{" "}
+              <span className={styles.dim}>designed to help you run a smarter brokerage</span>
             </h2>
           </div>
         </section>
