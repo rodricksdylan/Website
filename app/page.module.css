@@ -442,10 +442,10 @@
 
 /* band */
 .band {
-  padding: 26px 0;
+  padding: 40px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: var(--white);
+  background: var(--surface-warm);
 }
 
 .bandInner { 
@@ -472,13 +472,13 @@
 }
 
 .logoBox {
-  border: 1px dashed var(--line);
+  border: 1px solid var(--line);
   border-radius: 14px;
   padding: 24px;
   text-align: center;
   color: var(--light-text);
-  background: var(--light-bg);
-  font-weight: 750;
+  background: var(--white);
+  font-weight: 600;
   font-size: 13px;
   display: flex;
   align-items: center;
