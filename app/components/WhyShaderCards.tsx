@@ -66,37 +66,37 @@ const features: Feature[] = [
     title: "Insurance domain logic",
     description: "Purpose-built rules for how broking actually works—not a generic chatbot.",
     icon: ShieldCheck,
-    shader: { proportion: 0.3, softness: 0.95, distortion: 0.15, swirl: 0.6, swirlIterations: 8, shape: "checks", shapeScale: 0.08, colors: ["hsl(214, 100%, 92%)", "hsl(210, 95%, 74%)", "hsl(218, 100%, 86%)", "hsl(206, 100%, 80%)"] },
+    shader: { proportion: 0.3, softness: 0.95, distortion: 0.15, swirl: 0.6, swirlIterations: 8, shape: "checks", shapeScale: 0.08, colors: ["hsl(214, 95%, 82%)", "hsl(212, 90%, 62%)", "hsl(218, 95%, 76%)", "hsl(206, 95%, 68%)"] },
   },
   {
     title: "Structured workflow rules",
     description: "Each request follows the right steps, in the right order, every time.",
     icon: Workflow,
-    shader: { proportion: 0.4, softness: 1.25, distortion: 0.2, swirl: 0.9, swirlIterations: 12, shape: "stripes", shapeScale: 0.12, colors: ["hsl(190, 95%, 90%)", "hsl(186, 85%, 72%)", "hsl(196, 95%, 85%)", "hsl(188, 90%, 78%)"] },
+    shader: { proportion: 0.4, softness: 1.25, distortion: 0.2, swirl: 0.9, swirlIterations: 12, shape: "stripes", shapeScale: 0.12, colors: ["hsl(190, 90%, 80%)", "hsl(186, 82%, 60%)", "hsl(196, 92%, 75%)", "hsl(188, 88%, 66%)"] },
   },
   {
     title: "Retrieval from trusted sources",
     description: "Answers grounded in your policy wordings and insurer material, not guesses.",
     icon: BookSearch,
-    shader: { proportion: 0.35, softness: 1.0, distortion: 0.18, swirl: 0.7, swirlIterations: 10, shape: "checks", shapeScale: 0.1, colors: ["hsl(200, 100%, 92%)", "hsl(196, 90%, 74%)", "hsl(205, 100%, 86%)", "hsl(198, 95%, 80%)"] },
+    shader: { proportion: 0.35, softness: 1.0, distortion: 0.18, swirl: 0.7, swirlIterations: 10, shape: "checks", shapeScale: 0.1, colors: ["hsl(200, 95%, 82%)", "hsl(196, 88%, 62%)", "hsl(205, 95%, 76%)", "hsl(198, 92%, 68%)"] },
   },
   {
     title: "AI reasoning",
     description: "Works out the best next step for the broker, not just a reply.",
     icon: Cpu,
-    shader: { proportion: 0.45, softness: 1.15, distortion: 0.22, swirl: 0.8, swirlIterations: 15, shape: "stripes", shapeScale: 0.09, colors: ["hsl(224, 100%, 93%)", "hsl(220, 90%, 78%)", "hsl(230, 100%, 88%)", "hsl(222, 95%, 82%)"] },
+    shader: { proportion: 0.45, softness: 1.15, distortion: 0.22, swirl: 0.8, swirlIterations: 15, shape: "stripes", shapeScale: 0.09, colors: ["hsl(224, 95%, 83%)", "hsl(220, 88%, 66%)", "hsl(230, 95%, 78%)", "hsl(222, 92%, 70%)"] },
   },
   {
     title: "Human review where needed",
     description: "Flags items for a broker to confirm before anything is acted on.",
     icon: UserCheck,
-    shader: { proportion: 0.38, softness: 1.0, distortion: 0.16, swirl: 0.85, swirlIterations: 11, shape: "checks", shapeScale: 0.11, colors: ["hsl(210, 100%, 92%)", "hsl(206, 92%, 76%)", "hsl(216, 100%, 86%)", "hsl(208, 95%, 80%)"] },
+    shader: { proportion: 0.38, softness: 1.0, distortion: 0.16, swirl: 0.85, swirlIterations: 11, shape: "checks", shapeScale: 0.11, colors: ["hsl(210, 95%, 82%)", "hsl(206, 90%, 64%)", "hsl(216, 95%, 76%)", "hsl(208, 92%, 68%)"] },
   },
   {
     title: "Action-ready outputs",
     description: "Quote info, renewal notes, and client summaries ready to use.",
     icon: FileCheck,
-    shader: { proportion: 0.42, softness: 1.05, distortion: 0.19, swirl: 0.75, swirlIterations: 9, shape: "stripes", shapeScale: 0.13, colors: ["hsl(194, 100%, 91%)", "hsl(190, 90%, 74%)", "hsl(200, 100%, 86%)", "hsl(192, 95%, 80%)"] },
+    shader: { proportion: 0.42, softness: 1.05, distortion: 0.19, swirl: 0.75, swirlIterations: 9, shape: "stripes", shapeScale: 0.13, colors: ["hsl(194, 95%, 81%)", "hsl(190, 88%, 62%)", "hsl(200, 95%, 76%)", "hsl(192, 92%, 68%)"] },
   },
 ];
 
