@@ -165,78 +165,39 @@
 /* announcement banner */
 .announcementBanner {
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #2366f0 100%);
-  color: var(--white);
+  background: var(--surface-warm);
+  color: var(--ink);
   text-align: center;
-  padding: 14px 20px;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.announcementBanner::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 80px;
-  background: radial-gradient(ellipse, rgba(35, 102, 240, 0.5) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.announcementBanner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    transparent 40%,
-    rgba(255, 255, 255, 0.08) 50%,
-    transparent 60%,
-    transparent 100%
-  );
-  animation: shimmer 4s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-30%); }
-  100% { transform: translateX(30%); }
+  border-bottom: 1px solid var(--line);
 }
 
 .bannerHighlight {
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.01em;
+  color: var(--dark);
 }
 
 .announcementBanner a {
-  position: relative;
-  color: var(--white);
+  color: var(--primary);
   text-decoration: none;
-  font-weight: 700;
-  padding: 4px 12px;
+  font-weight: 600;
+  padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--line);
+  background: var(--white);
   font-size: 13px;
   transition: all 0.2s ease;
 }
 
 .announcementBanner a:hover {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: var(--dark);
 }
 
 /* hero */
