@@ -5,8 +5,7 @@ import { SiteLayout } from "./components/SiteLayout";
 import ProductShowcase from "./components/ProductShowcase";
 import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
-import HeroSphere from "./components/HeroSphere";
-import IconButton from "./components/IconButton";
+import HeroPixel from "./components/HeroPixel";
 
 export default function HomePage() {
   return (
@@ -19,34 +18,39 @@ export default function HomePage() {
         </div>
 
         {/* Hero */}
-        <section className={styles.hero}>
+        <HeroPixel />
+
+        {/* Tagline band */}
+        <section className={styles.taglineBand}>
           <div className={styles.container}>
-            <div className={styles.heroGrid}>
-              <div className={styles.heroCopy}>
-                <h1 className={styles.h1}>
-                  AI-powered insurance workflows&mdash;without the portal hopping.
-                </h1>
-                <p className={styles.lead}>
-                  Transform your brokerage with intelligent, purpose-built tools for insurance. Improve compliance, reduce manual work, and deliver a smoother client experience.
+            <h2 className={styles.tagline}>
+              InsurAI is an insurance-tuned AI platform{" "}
+              <span className={styles.dim}>designed to help you run a smarter brokerage.</span>
+            </h2>
+          </div>
+        </section>
+
+        {/* Value columns */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.valueGrid}>
+              <div className={styles.valueCol}>
+                <h3 className={styles.h3}>Insurance-tuned intelligence</h3>
+                <p className={styles.muted}>
+                  Models trained specifically for broker workflows&mdash;from policy insights to consent auditing.
                 </p>
-
-                <div className={styles.heroCta}>
-                  <IconButton href="#contact">Contact sales</IconButton>
-                  <a className={`${styles.btn} ${styles.btnGhost}`} href="#products">
-                    Explore products
-                  </a>
-                </div>
-
-                <ul className={styles.ticks}>
-                  <li>Broker systems interface</li>
-                  <li>Insurance-tuned AI intelligence</li>
-                  <li>Precision document &amp; data extraction</li>
-                </ul>
               </div>
-
-              {/* Hero visual */}
-              <div className={styles.heroVisual} aria-hidden="true">
-                <HeroSphere />
+              <div className={styles.valueCol}>
+                <h3 className={styles.h3}>Human in the loop</h3>
+                <p className={styles.muted}>
+                  You stay in control. Nothing happens without your approval.
+                </p>
+              </div>
+              <div className={styles.valueCol}>
+                <h3 className={styles.h3}>Built for broker workflows</h3>
+                <p className={styles.muted}>
+                  Fits how brokers already work&mdash;no portal hopping, no busywork.
+                </p>
               </div>
             </div>
           </div>
