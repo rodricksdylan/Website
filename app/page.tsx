@@ -139,18 +139,69 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className={styles.grid3}>
+            <div className={styles.featGrid}>
               {[
-                ["Insurance domain logic", "Purpose-built rules for how broking actually works."],
-                ["Structured workflow rules", "Each request follows the right steps, in the right order."],
-                ["Retrieval from trusted sources", "Answers grounded in policy wordings and insurer material."],
-                ["AI reasoning", "Works out the best next step, not just a reply."],
-                ["Human review where needed", "Flags items for a broker to confirm before acting."],
-                ["Action-ready outputs", "Quote info, renewal notes, and summaries ready to use."],
-              ].map(([t, d]) => (
-                <div className={styles.card} key={t}>
-                  <h3 className={styles.h3}>{t}</h3>
-                  <p className={styles.muted}>{d}</p>
+                {
+                  t: "Insurance domain logic",
+                  d: "Purpose-built rules for how broking actually works.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z" /><path d="M9 12l2 2 4-4" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "Structured workflow rules",
+                  d: "Each request follows the right steps, in the right order.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="4" width="6" height="6" rx="1" /><rect x="15" y="14" width="6" height="6" rx="1" /><path d="M9 7h6a3 3 0 0 1 3 3v4" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "Retrieval from trusted sources",
+                  d: "Answers grounded in policy wordings and insurer material.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z" /><path d="M4 19a2 2 0 0 1 2-2h12" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "AI reasoning",
+                  d: "Works out the best next step, not just a reply.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="6" y="6" width="12" height="12" rx="2" /><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "Human review where needed",
+                  d: "Flags items for a broker to confirm before acting.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M16 11l2 2 4-4" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "Action-ready outputs",
+                  d: "Quote info, renewal notes, and summaries ready to use.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M9 15l2 2 4-4" />
+                    </svg>
+                  ),
+                },
+              ].map((f) => (
+                <div className={styles.featCell} key={f.t}>
+                  <div className={styles.featCellHead}>
+                    {f.icon}
+                    <h3 className={styles.featTitle}>{f.t}</h3>
+                  </div>
+                  <p className={styles.featText}>{f.d}</p>
                 </div>
               ))}
             </div>
