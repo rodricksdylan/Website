@@ -27,7 +27,7 @@ export default function HomePage() {
                   InsurAI is an orchestration platform designed to help you run a smarter brokerage
                 </h1>
                 <p className={styles.lead}>
-                  Transform your brokerage with intelligent, purpose-built tools for insurance. Improve compliance, reduce manual work, and deliver a smoother client experience.
+                  Give your brokers an AI assistant that reads every policy&mdash;instant answers, fewer tabs, and better advice for your clients.
                 </p>
 
                 <div className={styles.heroCta}>
@@ -52,6 +52,38 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Value props */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.sectionHead}>
+              <h2 className={styles.h2}>Built for the way brokers work</h2>
+              <p className={styles.muted}>
+                InsurAI puts insurance-augmented AI right inside your workflow&mdash;so brokers spend less time digging through policies and more time advising clients.
+              </p>
+            </div>
+            <div className={styles.grid3}>
+              <div className={styles.card}>
+                <h3 className={styles.h3}>Insurance-augmented intelligence</h3>
+                <p className={styles.muted}>
+                  Models augmented specifically for broker workflows&mdash;from policy insights to coverage questions.
+                </p>
+              </div>
+              <div className={styles.card}>
+                <h3 className={styles.h3}>Human in the loop</h3>
+                <p className={styles.muted}>
+                  You stay in control. InsurAI surfaces the answer and its source&mdash;you make the call.
+                </p>
+              </div>
+              <div className={styles.card}>
+                <h3 className={styles.h3}>Built for broker workflows</h3>
+                <p className={styles.muted}>
+                  Ask in plain language and get answers across long policy documents&mdash;no portal hopping.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Products */}
         <section className={styles.section} id="products">
           <div className={styles.geometricBg}>
@@ -63,31 +95,17 @@ export default function HomePage() {
           <div className={styles.container}>
             <div className={styles.sectionHead}>
               <h2 className={styles.h2}>Products</h2>
-              <p className={styles.muted}>Start with compliance automation today. Add AI policy intelligence next.</p>
+              <p className={styles.muted}>Conversational AI policy intelligence, purpose-built for brokers.</p>
             </div>
           </div>
         </section>
 
         {/* Product Showcases */}
         <ProductShowcase
-          title="ConsentAI"
-          description="Your complete consent-compliance platform: automated requests, real-time tracking, clear audit trails, and broker-friendly workflows. Transform how you manage consent requests with intelligent automation."
-          imageSrc="/images/consent ai dashboard.png"
-          imageAlt="ConsentAI Dashboard Interface"
-          primaryCta={{ label: "Open ConsentAI", href: "https://www.consentai.com.au/", external: true }}
-          secondaryCta={{ label: "Request pricing", href: "https://www.consentai.com.au/pricing", external: true }}
-          titleColorCombo="consentai"
-          chatImageSrc="/images/consentai-chat.png"
-          chatImageAlt="ConsentAI Chat Interface"
-          chatDescription="Use the AI chat assistant to quickly get answers about consent requests, compliance requirements, and workflow guidance. Simply ask questions in natural language and receive instant, accurate information to help you manage consent requests more efficiently."
-        />
-
-        <ProductShowcase
           title="PolicyAI"
           description="A conversational assistant that helps brokers extract and work with policy information instantly—fewer tabs, faster answers, better advice. Ask questions across long policy documents and get instant insights."
           imageSrc="/images/policyai dashboard.png"
           imageAlt="PolicyAI Interface"
-          reverse={true}
           primaryCta={{ label: "Open PolicyAI", href: "https://www.policyai.com.au", external: true }}
           secondaryCta={{ label: "See how it works", href: "https://www.policyai.com.au/features", external: true }}
           titleColorCombo="policyai"
@@ -116,6 +134,29 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.ctaCard}>
+              <div>
+                <h2 className={styles.h2}>Give every broker an AI policy expert</h2>
+                <p className={styles.muted}>See how PolicyAI answers complex policy questions in seconds.</p>
+              </div>
+              <div className={styles.heroCta}>
+                <IconButton href="#contact">Contact sales</IconButton>
+                <a
+                  className={`${styles.btn} ${styles.btnGhost}`}
+                  href="https://www.policyai.com.au"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open PolicyAI
+                </a>
+              </div>
             </div>
           </div>
         </section>
