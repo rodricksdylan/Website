@@ -158,47 +158,20 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className={styles.compareGrid}>
-              <div className={styles.compareCard}>
-                <h3 className={styles.compareTitle}>Generic AI tools</h3>
-                <p className={styles.compareSub}>Read documents and produce answers.</p>
-                <ul className={styles.compareList}>
-                  {[
-                    "Treat every request as generic Q&A",
-                    "Guess from a general-purpose model",
-                    "One-size-fits-all answers",
-                    "Just produce a response",
-                    "No safeguards or sign-off",
-                    "Plain text you re-key into systems",
-                  ].map((t) => (
-                    <li className={`${styles.compareItem} ${styles.compareItemBad}`} key={t}>
-                      <span className={`${styles.mark} ${styles.markBad}`}>&times;</span>
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className={`${styles.compareCard} ${styles.compareCardGood}`}>
-                <span className={styles.compareTag}>InsurAI</span>
-                <h3 className={styles.compareTitle}>Built for insurance workflows</h3>
-                <p className={styles.compareSub}>Understands the request, rules, sources and next action.</p>
-                <ul className={styles.compareList}>
-                  {[
-                    "Understands the broker's actual task first",
-                    "Retrieves from your policy wordings & insurer sources",
-                    "Configured to your brokerage's own rules",
-                    "Reasons out the best next action",
-                    "Flags items for human review",
-                    "Action-ready outputs: quotes, renewals, summaries",
-                  ].map((t) => (
-                    <li className={`${styles.compareItem} ${styles.compareItemGood}`} key={t}>
-                      <span className={`${styles.mark} ${styles.markGood}`}>&#10003;</span>
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className={styles.grid3}>
+              {[
+                ["Insurance domain logic", "Purpose-built rules for how broking actually works."],
+                ["Structured workflow rules", "Each request follows the right steps, in the right order."],
+                ["Retrieval from trusted sources", "Answers grounded in policy wordings and insurer material."],
+                ["AI reasoning", "Works out the best next step, not just a reply."],
+                ["Human review where needed", "Flags items for a broker to confirm before acting."],
+                ["Action-ready outputs", "Quote info, renewal notes, and summaries ready to use."],
+              ].map(([t, d]) => (
+                <div className={styles.card} key={t}>
+                  <h3 className={styles.h3}>{t}</h3>
+                  <p className={styles.muted}>{d}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
