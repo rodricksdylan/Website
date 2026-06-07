@@ -130,7 +130,7 @@
 }
 
 .brandAccent {
-  color: var(--dark);
+  color: #2366f0; /* original InsurAI brand blue */
 }
 
 .nav {
