@@ -1,0 +1,178 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  z-index: 0;
+}
+
+/* readability scrim behind the headline */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    100deg,
+    rgba(20, 30, 50, 0.45) 0%,
+    rgba(20, 30, 50, 0.18) 38%,
+    rgba(20, 30, 50, 0) 62%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 84px 20px 120px;
+}
+
+.copy {
+  max-width: 560px;
+}
+
+.h1 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  text-shadow: 0 2px 18px rgba(10, 20, 40, 0.35);
+}
+
+.h1 .dim {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.lead {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 26px;
+  max-width: 480px;
+  text-shadow: 0 1px 12px rgba(10, 20, 40, 0.35);
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 13px 22px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btnPrimary {
+  background: #ffffff;
+  color: var(--dark);
+  box-shadow: 0 8px 24px rgba(10, 20, 40, 0.25);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+}
+
+.btnGhost {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.btnGhost:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* floating glassy task cards */
+.cards {
+  position: absolute;
+  top: 96px;
+  right: 24px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 280px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(10, 20, 40, 0.18);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cardDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dotDone { background: #3fae5a; }
+.dotRun  { background: var(--primary); }
+
+.cardSub {
+  color: var(--light-text);
+  font-weight: 500;
+}
+
+/* pixel-edge transition into the cream page */
+.pixelEdge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 24px;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, var(--bg-cream) 0 12px, transparent 12px 24px) 0 12px / 24px 12px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 12px, var(--bg-cream) 12px 24px) 0 0 / 24px 12px no-repeat,
+    linear-gradient(var(--bg-cream), var(--bg-cream)) 0 18px / 100% 6px no-repeat;
+}
+
+@media (max-width: 900px) {
+  .cards { display: none; }
+  .h1 { font-size: 38px; }
+  .inner { padding: 64px 16px 96px; }
+}
+
+@media (max-width: 600px) {
+  .h1 { font-size: 30px; }
+  .lead { font-size: 16px; }
+  .cta { flex-direction: column; }
+  .btn { width: 100%; }
+}
