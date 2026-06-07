@@ -90,15 +90,15 @@
 }
 
 .btnPrimary {
-  background: var(--dark);
+  background: var(--gradient-primary);
   color: var(--white);
   border: none;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 12px 30px rgba(35, 102, 240, 0.22);
 }
 
 .btnPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 16px 40px rgba(35, 102, 240, 0.3);
 }
 
 .btnGhost {

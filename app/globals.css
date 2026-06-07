@@ -1,28 +1,26 @@
 :root {
-  /* Cofounder-inspired warm palette */
-  --primary: #3B6FD4;        /* muted blue accent — links/active/highlights only */
-  --primary-dark: #2F59AA;
-  --primary-light: #6E96E0;
-  --dark: #1A1712;           /* warm near-black */
-  --ink: #211E18;            /* warm body ink */
-  --bg-cream: #F4F1EA;       /* page background */
-  --surface-warm: #FBFAF6;   /* alt card surface */
-  --light-bg: #EFEBE1;       /* subtle warm panel */
-  --light-bg-gradient: #F4F1EA;
-  --text: #211E18;
-  --light-text: #6E665A;     /* warm grey */
+  /* Original light theme colors */
+  --primary: #2366f0;
+  --primary-dark: #1a4fc4;
+  --primary-light: #4d85f5;
+  --dark: #111827;
+  --light-bg: #f0f5ff;
+  --light-bg-gradient: linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%);
+  --text: #333;
+  --light-text: #6b7280;
   --white: #ffffff;
-  --shadow-sm: 0 1px 2px rgba(26, 23, 18, 0.05);
-  --shadow-md: 0 6px 20px rgba(26, 23, 18, 0.08);
-  --shadow-lg: 0 18px 50px rgba(26, 23, 18, 0.12);
-  --gradient-primary: var(--dark); /* CTAs now solid ink; keep var name for inheritance */
-
-  --bg: var(--bg-cream);
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  
+  /* New variables for Atlassian layout (using light theme colors) */
+  --bg: var(--light-bg);
   --muted: var(--light-text);
-  --line: rgba(26, 23, 18, 0.10);
+  --line: rgba(0, 0, 0, 0.08);
   --accent: var(--primary);
   --accent2: var(--primary);
-  --shadow: 0 18px 50px rgba(26, 23, 18, 0.12);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   --radius: 18px;
   --max: 1120px;
 }
@@ -34,10 +32,10 @@
 }
 
 html, body {
-  background: var(--bg-cream);
+  background: var(--light-bg-gradient);
   color: var(--text);
   line-height: 1.6;
-  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-open-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -120,7 +118,10 @@ a:hover {
 
 /* Gradient text */
 .gradient-text {
-  color: var(--dark);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Card hover effects */
@@ -272,14 +273,4 @@ a:hover {
   100% {
     offset-distance: 100%;
   }
-}
-
-/* Cofounder-inspired display + two-tone helpers */
-.serif {
-  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
-}
-
-/* Two-tone headline: trailing clause dimmed */
-.dim {
-  color: var(--light-text);
 }

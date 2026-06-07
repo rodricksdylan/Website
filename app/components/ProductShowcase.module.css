@@ -32,13 +32,12 @@
 }
 
 .title {
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-size: 44px;
+  font-size: 48px;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--dark);
   margin: 0;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .titleBlack {
@@ -76,19 +75,19 @@
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  border-radius: 999px;
-  background: var(--dark);
+  border-radius: 12px;
+  background: var(--gradient-primary);
   color: var(--white);
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 16px;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(35, 102, 240, 0.3);
 }
 
 .ctaPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 16px rgba(35, 102, 240, 0.4);
 }
 
 .ctaSecondary {
@@ -96,7 +95,7 @@
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  border-radius: 999px;
+  border-radius: 12px;
   background: var(--white);
   color: var(--dark);
   font-weight: 700;
@@ -107,8 +106,8 @@
 }
 
 .ctaSecondary:hover {
-  background: var(--surface-warm);
-  border-color: var(--dark);
+  background: rgba(35, 102, 240, 0.05);
+  border-color: var(--primary);
 }
 
 /* Visual Block */
@@ -190,7 +189,7 @@
   position: absolute;
   width: 90%;
   height: 80%;
-  background: rgba(26, 23, 18, 0.05);
+  background: linear-gradient(135deg, rgba(35, 102, 240, 0.15), rgba(35, 102, 240, 0.08));
   border-radius: 24px;
   transform: rotate(-4deg) translateX(-5%) translateY(5%);
   z-index: 1;
@@ -200,7 +199,7 @@
   position: absolute;
   width: 85%;
   height: 75%;
-  background: rgba(26, 23, 18, 0.04);
+  background: linear-gradient(45deg, rgba(35, 102, 240, 0.12), rgba(35, 102, 240, 0.06));
   border-radius: 20px;
   transform: rotate(3deg) translateX(8%) translateY(-3%);
   z-index: 1;
@@ -210,7 +209,7 @@
   position: absolute;
   width: 80%;
   height: 70%;
-  background: rgba(26, 23, 18, 0.03);
+  background: linear-gradient(225deg, rgba(35, 102, 240, 0.1), rgba(35, 102, 240, 0.05));
   border-radius: 18px;
   transform: rotate(-2deg) translateX(-2%) translateY(8%);
   z-index: 1;
