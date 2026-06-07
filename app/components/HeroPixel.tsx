@@ -165,42 +165,72 @@ export default function HeroPixel() {
       px(x + 14, groundY - 5, 2, 1, "#4ad6a0");
     };
 
-    // broker reclining at his garden desk, feet up, coffee in hand
+    // broker reclining in his office chair, feet up on the desk
     const drawBroker = () => {
-      px(150, 64, 5, 28, "#6b4a2c"); // backrest
-      px(150, 88, 20, 4, "#6b4a2c"); // seat
-      px(151, 90, 3, 6, "#553a22"); // chair legs
-      px(166, 90, 3, 6, "#553a22");
-      px(158, 82, 14, 8, "#2f3b5c"); // hips/pants
-      px(155, 72, 12, 12, "#6fa8dc"); // shirt
-      px(156, 71, 9, 2, "#5b95cc"); // collar
-      px(157, 65, 8, 8, "#e8b07a"); // head
-      px(157, 63, 8, 3, "#5a3b22"); // hair top
-      px(156, 65, 2, 5, "#5a3b22"); // hair back
-      px(159, 68, 5, 1, "#1c1c1c"); // sunglasses
-      px(152, 66, 3, 7, "#e8b07a"); // arm behind head
-      px(152, 65, 6, 2, "#e8b07a");
-      px(170, 84, 18, 5, "#2f3b5c"); // thigh
-      px(186, 82, 16, 4, "#3a466b"); // shin
-      px(200, 80, 8, 4, "#3a2c20"); // shoes on desk
+      // office chair (behind the broker)
+      px(146, 62, 7, 38, "#3a3f47"); // tall reclined back
+      px(144, 62, 10, 6, "#454b54"); // headrest
+      px(148, 96, 24, 5, "#3a3f47"); // seat
+      px(157, 101, 4, 11, "#2c3137"); // gas post
+      px(149, 112, 22, 3, "#2c3137"); // base
+      px(150, 115, 3, 3, "#1f2429"); // wheels
+      px(159, 115, 3, 3, "#1f2429");
+      px(168, 115, 3, 3, "#1f2429");
+      px(170, 88, 4, 9, "#454b54"); // right armrest
+
+      // broker
+      px(158, 89, 15, 8, "#2f3b5c"); // hips / pants on seat
+      px(151, 73, 15, 17, "#6fa8dc"); // torso reclined
+      px(150, 78, 2, 9, "#5f97cf"); // shirt shade
+      px(152, 72, 11, 2, "#5b95cc"); // collar
+      px(154, 65, 8, 8, "#e8b07a"); // head against headrest
+      px(154, 63, 8, 3, "#5a3b22"); // hair top
+      px(153, 65, 2, 5, "#5a3b22"); // hair side
+      px(156, 68, 5, 1, "#15171c"); // sunglasses
+      px(155, 71, 3, 1, "#d99a63"); // smile shade
+      // arm folded behind head
+      px(148, 66, 4, 8, "#e8b07a");
+      px(148, 65, 6, 2, "#e8b07a");
+      px(150, 73, 3, 3, "#6fa8dc"); // sleeve
+      // arm resting on the armrest
+      px(166, 84, 4, 9, "#6fa8dc"); // sleeve
+      px(167, 92, 4, 3, "#e8b07a"); // hand
+      // legs up, crossed ankles resting on the desk
+      px(170, 87, 15, 5, "#2f3b5c"); // thigh
+      px(183, 83, 13, 4, "#3a466b"); // shin
+      px(194, 78, 6, 4, "#3a2c20"); // front shoe on desk
+      px(192, 81, 5, 3, "#2f241b"); // crossed ankle
     };
 
     const drawDesk = (frame: number) => {
-      px(196, 80, 50, 4, "#a9753f"); // surface
-      px(196, 80, 50, 1, "#c08b50"); // top highlight
-      px(198, 84, 46, 22, "#8a5e30"); // front panel
-      px(200, 106, 4, 14, "#6f4a24"); // legs
-      px(238, 106, 4, 14, "#6f4a24");
-      px(210, 77, 12, 3, "#f3efe6"); // papers
-      px(211, 78, 10, 1, "#cfc6b4");
-      px(204, 75, 5, 5, "#d9534f"); // mug
-      px(208, 76, 1, 3, "#d9534f"); // handle
-      px(205, 76, 3, 1, "#3a2418"); // coffee
-      if (((frame >> 3) % 2) === 0) px(206, 72, 1, 2, "#cdd6df"); // steam
-      drawMonitor(222, 62, frame);
-      px(236, 76, 4, 4, "#b5613a"); // pot
-      px(235, 72, 6, 4, "#3f7d39"); // plant
-      px(237, 70, 2, 3, "#356b30");
+      // desktop
+      px(194, 80, 56, 4, "#a9753f"); // top
+      px(194, 80, 56, 1, "#c2925a"); // top highlight
+      px(194, 83, 56, 1, "#7a5228"); // edge shadow
+      // left leg
+      px(197, 84, 4, 34, "#6f4a24");
+      // right drawer cabinet
+      px(230, 84, 18, 34, "#8a5e30");
+      px(230, 84, 18, 1, "#a9753f"); // cabinet top edge
+      px(232, 91, 14, 1, "#6f4a24"); // drawer seams
+      px(232, 99, 14, 1, "#6f4a24");
+      px(232, 107, 14, 1, "#6f4a24");
+      px(244, 87, 2, 2, "#caa86a"); // drawer handles
+      px(244, 95, 2, 2, "#caa86a");
+      px(244, 103, 2, 2, "#caa86a");
+      // back modesty panel
+      px(201, 92, 29, 20, "#7a5228");
+      // --- items on top ---
+      drawMonitor(214, 62, frame); // monitor facing the broker
+      px(232, 74, 12, 2, "#cfd6dd"); // laptop lid
+      px(231, 76, 14, 1, "#9aa3ad"); // laptop hinge
+      px(206, 75, 5, 5, "#d9534f"); // coffee mug
+      px(210, 76, 1, 3, "#d9534f"); // handle
+      px(207, 76, 3, 1, "#3a2418"); // coffee
+      if (((frame >> 3) % 2) === 0) px(208, 72, 1, 2, "#cdd6df"); // steam
+      px(246, 75, 4, 5, "#b5613a"); // pot
+      px(245, 71, 6, 4, "#3f7d39"); // plant
+      px(247, 69, 2, 3, "#356b30");
     };
 
     let raf = 0;
