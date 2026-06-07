@@ -119,7 +119,42 @@ export default function HeroPixel() {
     <section className={styles.hero} aria-label="InsurAI hero">
       <canvas ref={canvasRef} className={styles.canvas} aria-hidden="true" />
       <div className={styles.scrim} aria-hidden="true" />
-      {/* overlay + cards + pixel edge added in Task 6 */}
+
+      <div className={styles.inner}>
+        <div className={styles.copy}>
+          <h1 className={styles.h1}>
+            InsurAI helps you run a smarter brokerage{" "}
+            <span className={styles.dim}>with AI agents.</span>
+          </h1>
+          <p className={styles.lead}>
+            Automate compliance, policy answers, and client workflows&mdash;without the portal hopping.
+          </p>
+          <div className={styles.cta}>
+            <a className={`${styles.btn} ${styles.btnPrimary}`} href="#contact">
+              Contact sales
+            </a>
+            <a className={`${styles.btn} ${styles.btnGhost}`} href="#products">
+              Explore products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.cards} aria-hidden="true">
+        <div className={styles.card}>
+          <span className={`${styles.cardDot} ${styles.dotDone}`} />
+          <span>Consent request sent <span className={styles.cardSub}>&middot; ConsentAI</span></span>
+        </div>
+        <div className={styles.card}>
+          <span className={`${styles.cardDot} ${styles.dotDone}`} />
+          <span>Policy summarised <span className={styles.cardSub}>&middot; PolicyAI</span></span>
+        </div>
+        <div className={styles.card}>
+          <span className={`${styles.cardDot} ${styles.dotRun}`} />
+          <span>Renewal flagged <span className={styles.cardSub}>&middot; running</span></span>
+        </div>
+      </div>
+
       <div className={styles.pixelEdge} aria-hidden="true" />
     </section>
   );
