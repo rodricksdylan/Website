@@ -7,6 +7,7 @@ import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
 import HeroSphere from "./components/HeroSphere";
 import IconButton from "./components/IconButton";
+import WorkflowCarousel from "./components/WorkflowCarousel";
 
 export default function HomePage() {
   return (
@@ -124,23 +125,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className={styles.steps}>
-              {[
-                ["Understand the request", "First we identify what the broker is trying to do — get a quote, process a renewal, request an endorsement, compare policy options, check a condition, or find missing underwriting information."],
-                ["Apply your brokerage's rules", "Configured per firm. InsurAI applies your brokerage's own logic — your insurer panel, product set, mandatory underwriting questions, referral triggers, and compliance requirements — so it works the way your firm works, not a generic template."],
-                ["Retrieve your firm's knowledge", "InsurAI searches your trusted material — your policy wordings, insurer guides, product rules, and underwriting criteria — so answers reflect what your brokerage actually sells and how it advises. Your rules and knowledge become an advantage no competitor can copy."],
-                ["Reason through the next step", "We combine the request, the applicable rules, and the retrieved information to work out the best next step: explain a condition, compare options, highlight gaps, prepare a summary, or flag items for human review."],
-                ["Execute or assist with the workflow", "Where appropriate we help with the next action — quote information, renewal notes, endorsement details, client summaries, or system-ready outputs — always keeping broker judgement in the loop."],
-              ].map(([t, d], i) => (
-                <div className={styles.step} key={t}>
-                  <div className={styles.stepNum}>{i + 1}</div>
-                  <div>
-                    <h3 className={styles.h3}>{t}</h3>
-                    <p className={styles.muted}>{d}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <WorkflowCarousel />
           </div>
         </section>
 
