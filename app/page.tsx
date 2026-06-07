@@ -7,7 +7,7 @@ import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
 import HeroSphere from "./components/HeroSphere";
 import IconButton from "./components/IconButton";
-import WorkflowCarousel from "./components/WorkflowCarousel";
+import WorkflowAccordion from "./components/WorkflowAccordion";
 
 export default function HomePage() {
   return (
@@ -125,7 +125,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <WorkflowCarousel />
+            <WorkflowAccordion />
           </div>
         </section>
 
