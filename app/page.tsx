@@ -7,6 +7,7 @@ import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
 import HeroSphere from "./components/HeroSphere";
 import IconButton from "./components/IconButton";
+import WhyShaderCards from "./components/WhyShaderCards";
 
 export default function HomePage() {
   return (
@@ -149,32 +150,7 @@ export default function HomePage() {
         </section>
 
         {/* Why this matters */}
-        <section className={styles.section}>
-          <div className={styles.container}>
-            <div className={styles.sectionHead}>
-              <h2 className={styles.h2}>Why this matters</h2>
-              <p className={styles.muted}>
-                Generic AI tools can read documents and produce answers. InsurAI is designed to understand insurance workflows &mdash; considering the request, the rules, the source documents, the workflow stage, and the action required, not just generating a response. That&rsquo;s what makes it different.
-              </p>
-            </div>
-
-            <div className={styles.grid3}>
-              {[
-                ["Insurance domain logic", "Purpose-built rules for how broking actually works."],
-                ["Structured workflow rules", "Each request follows the right steps, in the right order."],
-                ["Retrieval from trusted sources", "Answers grounded in policy wordings and insurer material."],
-                ["AI reasoning", "Works out the best next step, not just a reply."],
-                ["Human review where needed", "Flags items for a broker to confirm before acting."],
-                ["Action-ready outputs", "Quote info, renewal notes, and summaries ready to use."],
-              ].map(([t, d]) => (
-                <div className={styles.card} key={t}>
-                  <h3 className={styles.h3}>{t}</h3>
-                  <p className={styles.muted}>{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <WhyShaderCards />
 
         {/* Closing CTA */}
         <section className={styles.section}>
