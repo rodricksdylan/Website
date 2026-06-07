@@ -36,19 +36,6 @@ export default function HeroPixel() {
               unoptimized
             />
           </div>
-
-          <div className={`${styles.card} ${styles.cardA}`} aria-hidden="true">
-            <span className={`${styles.cardDot} ${styles.dotDone}`} />
-            <span>Consent request sent <span className={styles.cardSub}>&middot; ConsentAI</span></span>
-          </div>
-          <div className={`${styles.card} ${styles.cardB}`} aria-hidden="true">
-            <span className={`${styles.cardDot} ${styles.dotDone}`} />
-            <span>Policy summarised <span className={styles.cardSub}>&middot; PolicyAI</span></span>
-          </div>
-          <div className={`${styles.card} ${styles.cardC}`} aria-hidden="true">
-            <span className={`${styles.cardDot} ${styles.dotRun}`} />
-            <span>Renewal flagged <span className={styles.cardSub}>&middot; running</span></span>
-          </div>
         </div>
       </div>
     </section>
