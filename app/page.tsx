@@ -35,9 +35,9 @@ export default function HomePage() {
           <div className={styles.container}>
             <div className={styles.valueGrid}>
               <div className={styles.valueCol}>
-                <h3 className={styles.h3}>Insurance-tuned intelligence</h3>
+                <h3 className={styles.h3}>Insurance-augmented intelligence</h3>
                 <p className={styles.muted}>
-                  Models trained specifically for broker workflows&mdash;from policy insights to consent auditing.
+                  Models augmented specifically for broker workflows&mdash;from policy insights to consent auditing.
                 </p>
               </div>
               <div className={styles.valueCol}>
@@ -109,7 +109,7 @@ export default function HomePage() {
 
             <div className={styles.steps}>
               {[
-                ["Insurance-Tuned Language Models", "Our models are trained and optimised specifically for insurance workflows, enabling accurate responses—from policy insights to consent auditing."],
+                ["Insurance-Augmented Language Models", "Our models are augmented and optimised specifically for insurance workflows, enabling accurate responses—from policy insights to consent auditing."],
                 ["Interactive Chat Interfaces", "Navigate your workflows using a conversational assistant that understands and executes your requests. From managing consents today to retrieving policy insights tomorrow, everything is at your fingertips."],
               ].map(([t, d], i) => (
                 <div className={styles.step} key={t}>
