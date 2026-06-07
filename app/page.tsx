@@ -114,17 +114,27 @@ export default function HomePage() {
         {/* Why */}
         <WhySection />
 
-        {/* How */}
+        {/* How it works — insurance decision engine */}
         <section className={styles.section} id="how">
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <h2 className={styles.h2}>How It Works</h2>
+              <h2 className={styles.h2}>Built for insurance workflows, not generic chat</h2>
+              <p className={styles.muted}>
+                Insurance work isn&rsquo;t just answering questions. Brokers interpret client requests, check policy wording, follow insurer rules, spot missing information, compare options, and complete actions accurately. So InsurAI is built around a structured insurance decision engine&mdash;not a generic document chatbot. Every broker request passes through our insurance workflow algorithm:
+              </p>
+            </div>
+
+            <div className={styles.formula} aria-label="Insurance workflow algorithm">
+              Action = Execute(Reason(Retrieve(ApplyRules(Understand(Request)))))
             </div>
 
             <div className={styles.steps}>
               {[
-                ["Insurance-Augmented Language Models", "Our models are augmented and optimised specifically for insurance workflows, enabling accurate responses—from policy insights to consent auditing."],
-                ["Interactive Chat Interfaces", "Navigate your workflows using a conversational assistant that understands and executes your requests. From managing consents today to retrieving policy insights tomorrow, everything is at your fingertips."],
+                ["Understand the request", "First we identify what the broker is trying to do — get a quote, process a renewal, request an endorsement, compare policy options, check a condition, or find missing underwriting information."],
+                ["Apply insurance rules", "We apply insurance-specific logic: required client information, product rules, insurer requirements, mandatory underwriting questions, referral triggers, and compliance or documentation checks."],
+                ["Retrieve relevant insurance knowledge", "We search the right insurance sources — policy wordings, insurer guides, product rules, underwriting criteria — instead of asking a model to guess."],
+                ["Reason through the next step", "We combine the request, the applicable rules, and the retrieved information to work out the best next step: explain a condition, compare options, highlight gaps, prepare a summary, or flag items for human review."],
+                ["Execute or assist with the workflow", "Where appropriate we help with the next action — quote information, renewal notes, endorsement details, client summaries, or system-ready outputs — always keeping broker judgement in the loop."],
               ].map(([t, d], i) => (
                 <div className={styles.step} key={t}>
                   <div className={styles.stepNum}>{i + 1}</div>
@@ -132,6 +142,34 @@ export default function HomePage() {
                     <h3 className={styles.h3}>{t}</h3>
                     <p className={styles.muted}>{d}</p>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why this matters */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.sectionHead}>
+              <h2 className={styles.h2}>Why this matters</h2>
+              <p className={styles.muted}>
+                Generic AI tools can read documents and produce answers. InsurAI is designed to understand insurance workflows &mdash; considering the request, the rules, the source documents, the workflow stage, and the action required, not just generating a response. That&rsquo;s what makes it different.
+              </p>
+            </div>
+
+            <div className={styles.grid3}>
+              {[
+                ["Insurance domain logic", "Purpose-built rules for how broking actually works."],
+                ["Structured workflow rules", "Each request follows the right steps, in the right order."],
+                ["Retrieval from trusted sources", "Answers grounded in policy wordings and insurer material."],
+                ["AI reasoning", "Works out the best next step, not just a reply."],
+                ["Human review where needed", "Flags items for a broker to confirm before acting."],
+                ["Action-ready outputs", "Quote info, renewal notes, and summaries ready to use."],
+              ].map(([t, d]) => (
+                <div className={styles.card} key={t}>
+                  <h3 className={styles.h3}>{t}</h3>
+                  <p className={styles.muted}>{d}</p>
                 </div>
               ))}
             </div>

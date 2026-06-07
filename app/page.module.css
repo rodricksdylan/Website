@@ -1155,3 +1155,20 @@
     width: 100%;
   }
 }
+
+/* insurance workflow formula */
+.formula {
+  margin: 0 auto 32px;
+  max-width: 860px;
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(35, 102, 240, 0.06);
+  border: 1px solid rgba(35, 102, 240, 0.2);
+  border-radius: 14px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
