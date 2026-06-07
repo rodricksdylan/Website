@@ -120,7 +120,7 @@ export default function HomePage() {
             <div className={styles.sectionHead}>
               <h2 className={styles.h2}>Built for insurance workflows, not generic chat</h2>
               <p className={styles.muted}>
-                Insurance work isn&rsquo;t just answering questions. Brokers interpret client requests, check policy wording, follow insurer rules, spot missing information, compare options, and complete actions accurately. So InsurAI is built around a structured insurance decision engine&mdash;not a generic document chatbot. Every broker request passes through our insurance workflow algorithm:
+                Insurance work isn&rsquo;t just answering questions. Brokers interpret client requests, check policy wording, follow insurer rules, spot missing information, compare options, and complete actions accurately. So InsurAI is built around a structured insurance decision engine&mdash;not a generic document chatbot. The rules and knowledge steps are configured to each brokerage, so every firm gets an assistant shaped around its own way of working. Every broker request passes through our insurance workflow algorithm:
               </p>
             </div>
 
@@ -131,8 +131,8 @@ export default function HomePage() {
             <div className={styles.steps}>
               {[
                 ["Understand the request", "First we identify what the broker is trying to do — get a quote, process a renewal, request an endorsement, compare policy options, check a condition, or find missing underwriting information."],
-                ["Apply insurance rules", "We apply insurance-specific logic: required client information, product rules, insurer requirements, mandatory underwriting questions, referral triggers, and compliance or documentation checks."],
-                ["Retrieve relevant insurance knowledge", "We search the right insurance sources — policy wordings, insurer guides, product rules, underwriting criteria — instead of asking a model to guess."],
+                ["Apply your brokerage's rules", "Configured per firm. InsurAI applies your brokerage's own logic — your insurer panel, product set, mandatory underwriting questions, referral triggers, and compliance requirements — so it works the way your firm works, not a generic template."],
+                ["Retrieve your firm's knowledge", "InsurAI searches your trusted material — your policy wordings, insurer guides, product rules, and underwriting criteria — so answers reflect what your brokerage actually sells and how it advises. Your rules and knowledge become an advantage no competitor can copy."],
                 ["Reason through the next step", "We combine the request, the applicable rules, and the retrieved information to work out the best next step: explain a condition, compare options, highlight gaps, prepare a summary, or flag items for human review."],
                 ["Execute or assist with the workflow", "Where appropriate we help with the next action — quote information, renewal notes, endorsement details, client summaries, or system-ready outputs — always keeping broker judgement in the loop."],
               ].map(([t, d], i) => (
