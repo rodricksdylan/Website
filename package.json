@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@paper-design/shaders-react": "^0.0.76",
     "@types/nodemailer": "^7.0.5",
     "@types/three": "^0.184.1",
     "@vercel/analytics": "^1.6.1",
