@@ -4,13 +4,15 @@ import styles from "./HeroPixel.module.css";
 export default function HeroPixel() {
   return (
     <section className={styles.hero} aria-label="InsurAI hero">
+      {/* full-bleed blurred backdrop (same image) */}
       <Image
         src="/images/download.png"
-        alt="Pixel-art scene of the Sydney Harbour Bridge and Opera House across the harbour, with a laptop resting in a lush garden"
+        alt=""
         fill
         sizes="100vw"
-        className={styles.bg}
-        style={{ objectFit: "cover", objectPosition: "50% 30%", imageRendering: "pixelated" }}
+        className={styles.bgBlur}
+        style={{ objectFit: "cover" }}
+        aria-hidden="true"
         priority
         unoptimized
       />
@@ -33,6 +35,19 @@ export default function HeroPixel() {
               Explore products
             </a>
           </div>
+        </div>
+
+        <div className={styles.visual}>
+          <Image
+            src="/images/download.png"
+            alt="Pixel-art scene of the Sydney Harbour Bridge and Opera House across the harbour, with a laptop resting in a lush garden"
+            width={440}
+            height={440}
+            className={styles.art}
+            style={{ imageRendering: "pixelated" }}
+            priority
+            unoptimized
+          />
         </div>
       </div>
 

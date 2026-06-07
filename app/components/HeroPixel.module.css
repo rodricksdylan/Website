@@ -6,36 +6,39 @@
   isolation: isolate;
 }
 
-.bg {
+/* full-bleed blurred backdrop (same image, softened) */
+.bgBlur {
   z-index: 0;
-  transform-origin: 50% 30%;
+  object-fit: cover;
+  filter: blur(20px) brightness(0.82) saturate(1.1);
+  transform: scale(1.14);
+  transform-origin: 50% 40%;
   animation: heroZoom 28s ease-in-out infinite;
   will-change: transform;
 }
 
 @keyframes heroZoom {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.07); }
-  100% { transform: scale(1); }
+  0% { transform: scale(1.14); }
+  50% { transform: scale(1.22); }
+  100% { transform: scale(1.14); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bg {
+  .bgBlur {
     animation: none;
-    transform: none;
+    transform: scale(1.14);
   }
 }
 
-/* readability scrim behind the headline */
 .scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(
     100deg,
-    rgba(18, 28, 48, 0.6) 0%,
-    rgba(18, 28, 48, 0.34) 38%,
-    rgba(18, 28, 48, 0) 64%
+    rgba(14, 22, 40, 0.62) 0%,
+    rgba(14, 22, 40, 0.34) 42%,
+    rgba(14, 22, 40, 0.12) 70%
   );
   pointer-events: none;
 }
@@ -45,22 +48,26 @@
   z-index: 2;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 88px 20px 120px;
+  padding: 80px 20px 112px;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 48px;
+  align-items: center;
 }
 
 .copy {
-  max-width: 560px;
+  max-width: 540px;
 }
 
 .h1 {
   font-family: var(--font-fraunces), Georgia, serif;
   color: #ffffff;
   font-weight: 600;
-  font-size: 54px;
+  font-size: 52px;
   line-height: 1.04;
   letter-spacing: -0.02em;
   margin: 0 0 18px;
-  text-shadow: 0 2px 20px rgba(8, 16, 32, 0.45);
+  text-shadow: 0 2px 20px rgba(8, 16, 32, 0.5);
 }
 
 .h1 .dim {
@@ -72,8 +79,8 @@
   font-size: 18px;
   line-height: 1.6;
   margin: 0 0 26px;
-  max-width: 470px;
-  text-shadow: 0 1px 14px rgba(8, 16, 32, 0.45);
+  max-width: 460px;
+  text-shadow: 0 1px 14px rgba(8, 16, 32, 0.5);
 }
 
 .cta {
@@ -99,7 +106,7 @@
 .btnPrimary {
   background: #ffffff;
   color: var(--dark);
-  box-shadow: 0 8px 24px rgba(8, 16, 32, 0.28);
+  box-shadow: 0 8px 24px rgba(8, 16, 32, 0.3);
 }
 
 .btnPrimary:hover {
@@ -107,14 +114,31 @@
 }
 
 .btnGhost {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(6px);
 }
 
 .btnGhost:hover {
-  background: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* crisp whole image floating on the blurred backdrop */
+.visual {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+.art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 60px rgba(8, 16, 32, 0.45);
 }
 
 /* pixel-edge transition into the cream page */
@@ -124,7 +148,7 @@
   right: 0;
   bottom: -1px;
   height: 24px;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   background:
     repeating-linear-gradient(90deg, var(--bg-cream) 0 12px, transparent 12px 24px) 0 12px / 24px 12px no-repeat,
@@ -132,26 +156,25 @@
     linear-gradient(var(--bg-cream), var(--bg-cream)) 0 18px / 100% 6px no-repeat;
 }
 
-@media (max-width: 900px) {
-  .h1 {
-    font-size: 38px;
-  }
+@media (max-width: 980px) {
   .inner {
-    padding: 64px 16px 96px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 56px 16px 88px;
+    justify-items: center;
+    text-align: center;
   }
+  .copy { max-width: 600px; }
+  .lead { margin-left: auto; margin-right: auto; }
+  .cta { justify-content: center; }
+  .h1 { font-size: 38px; }
+  .visual { max-width: 340px; }
 }
 
 @media (max-width: 600px) {
-  .h1 {
-    font-size: 30px;
-  }
-  .lead {
-    font-size: 16px;
-  }
-  .cta {
-    flex-direction: column;
-  }
-  .btn {
-    width: 100%;
-  }
+  .h1 { font-size: 30px; }
+  .lead { font-size: 16px; }
+  .cta { flex-direction: column; width: 100%; }
+  .btn { width: 100%; }
+  .visual { max-width: 280px; }
 }
