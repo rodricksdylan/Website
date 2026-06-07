@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Open_Sans } from 'next/font/google'
+import { Inter, Fraunces } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -10,11 +10,10 @@ const inter = Inter({
   weight: ['400', '500', '600', '700', '800'],
 })
 
-const openSans = Open_Sans({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-open-sans',
+  variable: '--font-fraunces',
   display: 'swap',
-  style: ['normal', 'italic'],
   weight: ['400', '500', '600', '700'],
 })
 
@@ -29,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${openSans.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
       <body>
         {children}
         <Analytics />
