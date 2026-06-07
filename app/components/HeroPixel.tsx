@@ -4,6 +4,18 @@ import styles from "./HeroPixel.module.css";
 export default function HeroPixel() {
   return (
     <section className={styles.hero} aria-label="InsurAI hero">
+      <Image
+        src="/images/download.png"
+        alt="Pixel-art scene of the Sydney Harbour Bridge and Opera House across the harbour, with a laptop resting in a lush garden"
+        fill
+        sizes="100vw"
+        className={styles.bg}
+        style={{ objectFit: "cover", objectPosition: "50% 30%", imageRendering: "pixelated" }}
+        priority
+        unoptimized
+      />
+      <div className={styles.scrim} aria-hidden="true" />
+
       <div className={styles.inner}>
         <div className={styles.copy}>
           <h1 className={styles.h1}>
@@ -22,22 +34,9 @@ export default function HeroPixel() {
             </a>
           </div>
         </div>
-
-        <div className={styles.visual}>
-          <div className={styles.frame}>
-            <Image
-              src="/images/download.png"
-              alt="Pixel-art scene of the Sydney Harbour Bridge and Opera House across the harbour, with a laptop resting in a lush garden"
-              width={512}
-              height={512}
-              className={styles.art}
-              style={{ imageRendering: "pixelated" }}
-              priority
-              unoptimized
-            />
-          </div>
-        </div>
       </div>
+
+      <div className={styles.pixelEdge} aria-hidden="true" />
     </section>
   );
 }
