@@ -96,7 +96,17 @@ export default function HomePage() {
           <div className={styles.container}>
             <div className={styles.sectionHead}>
               <h2 className={styles.h2}>Products</h2>
-              <p className={styles.muted}>Conversational AI policy intelligence, purpose-built for brokers.</p>
+              <p className={styles.muted}>Conversational AI policy intelligence today&mdash;and an orchestration agent on the way.</p>
+              <div className={styles.statusRow}>
+                <span className={styles.statusPill}>
+                  <span className={`${styles.statusDot} ${styles.dotLive}`} />
+                  PolicyAI &middot; Live
+                </span>
+                <span className={styles.statusPill}>
+                  <span className={`${styles.statusDot} ${styles.dotDev}`} />
+                  InsurAI Agent &middot; In development
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -111,6 +121,38 @@ export default function HomePage() {
           secondaryCta={{ label: "See how it works", href: "https://www.policyai.com.au/features", external: true }}
           titleColorCombo="policyai"
         />
+
+        {/* InsurAI Agent — in development */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.agentCard}>
+              <span className={styles.agentBadge}>
+                <span className={styles.agentBadgeDot} />
+                In development
+              </span>
+              <h2 className={styles.h2}>InsurAI Agent</h2>
+              <p className={styles.agentLead}>
+                The orchestration layer for your brokerage. The Agent ties policy intelligence, your firm&rsquo;s rules, and your data into one assistant that acts across the whole broking workflow&mdash;quoting, renewals, endorsements and more.
+              </p>
+              <p className={styles.muted}>
+                We&rsquo;re looking for one brokerage to partner with us on an early-access pilot. You get a first-mover advantage and a real say in how it&rsquo;s built; we get real-world feedback to shape it. A genuine win for your firm and for us.
+              </p>
+
+              <ul className={styles.ticks}>
+                <li>Early access to the orchestration technology</li>
+                <li>Shaped around your firm&rsquo;s own rules and data</li>
+                <li>Partner pricing while we build it together</li>
+              </ul>
+
+              <div className={styles.heroCta}>
+                <IconButton href="#contact">Partner on the pilot</IconButton>
+                <a className={`${styles.btn} ${styles.btnGhost}`} href="#contact">
+                  Request early access
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Why */}
         <WhySection />

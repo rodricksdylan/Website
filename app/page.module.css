@@ -1232,3 +1232,89 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Product status pills */
+.statusRow {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark);
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.statusDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotLive {
+  background: #2ea043;
+}
+
+.dotDev {
+  background: #d4a017;
+}
+
+/* InsurAI Agent — in-development callout */
+.agentCard {
+  position: relative;
+  border: 1px dashed rgba(35, 102, 240, 0.45);
+  border-radius: var(--radius);
+  padding: 40px;
+  background:
+    radial-gradient(720px 240px at 12% 0%, rgba(35, 102, 240, 0.07), transparent 60%),
+    var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.agentBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(35, 102, 240, 0.1);
+  border: 1px solid rgba(35, 102, 240, 0.25);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.agentBadgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d4a017;
+}
+
+.agentLead {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--dark);
+  margin: 0 0 14px;
+  max-width: 760px;
+}
+
+@media (max-width: 600px) {
+  .agentCard {
+    padding: 28px 22px;
+  }
+}
