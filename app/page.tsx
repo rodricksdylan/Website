@@ -124,10 +124,6 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className={styles.formula} aria-label="Insurance workflow algorithm">
-              Action = Execute(Reason(Retrieve(ApplyRules(Understand(Request)))))
-            </div>
-
             <div className={styles.steps}>
               {[
                 ["Understand the request", "First we identify what the broker is trying to do — get a quote, process a renewal, request an endorsement, compare policy options, check a condition, or find missing underwriting information."],
