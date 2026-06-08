@@ -203,7 +203,7 @@ export default function HomePage() {
             <div className={styles.sectionHead}>
               <h2 className={styles.h2}>Why this matters</h2>
               <p className={styles.muted}>
-                Generic AI tools can read documents and produce answers. InsurAI is designed to understand insurance workflows &mdash; considering the request, the rules, the source documents, the workflow stage, and the action required, not just generating a response. That&rsquo;s what makes it different.
+                Generic AI tools can read documents and produce answers. InsurAI is designed to understand insurance workflows, not just generating a response. That&rsquo;s what makes it different.
               </p>
             </div>
 
