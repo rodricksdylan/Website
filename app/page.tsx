@@ -285,6 +285,35 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Use cases. EDIT COPY in the array below. */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.sectionHead}>
+              <h2 className={styles.h2}>Designed around real broking workflows</h2>
+              <p className={styles.muted}>
+                InsurAI supports the day-to-day work brokers already do &mdash; faster, and with
+                the source in view.
+              </p>
+            </div>
+            <div className={styles.useGrid}>
+              {[
+                { t: "Policy research", d: "Find and interpret wording across long documents in plain language." },
+                { t: "Renewal preparation", d: "Pull the context and prior terms together ahead of each renewal." },
+                { t: "Insurer comparison", d: "Compare product information side by side from approved material." },
+                { t: "Underwriting question support", d: "Draft well-formed questions grounded in the relevant policy." },
+                { t: "Quote workflow assistance", d: "Prepare submissions and move through quoting with more confidence." },
+                { t: "Internal knowledge support", d: "Surface your brokerage's own knowledge when your team needs it." },
+              ].map((u, i) => (
+                <div className={styles.useCell} key={u.t}>
+                  <span className={styles.useIndex}>{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className={styles.useTitle}>{u.t}</h3>
+                  <p className={styles.useText}>{u.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Closing CTA */}
         <section className={styles.section}>
           <div className={styles.container}>

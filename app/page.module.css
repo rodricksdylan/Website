@@ -1089,7 +1089,7 @@
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0;
   overflow: hidden;
   margin-top: 8px;
 }
@@ -1227,4 +1227,42 @@
   .agentCard {
     padding: 28px 22px;
   }
+}
+
+/* Use cases — bordered Carbon grid */
+.useGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 8px;
+}
+.useCell {
+  background: var(--white);
+  padding: 32px;
+}
+.useIndex {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  color: var(--primary);
+  letter-spacing: 0.06em;
+}
+.useTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 12px 0 6px;
+}
+.useText {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--light-text);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .useGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .useGrid { grid-template-columns: 1fr; }
 }
