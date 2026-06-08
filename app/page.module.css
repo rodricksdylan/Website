@@ -883,7 +883,7 @@
   gap: 12px;
   padding: 10px 12px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 0;
   background: var(--light-bg);
 }
 
@@ -906,7 +906,7 @@
   background: var(--white);
   border-radius: var(--radius);
   padding: 16px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .label {
@@ -920,7 +920,7 @@
 
 .input, .textarea {
   width: 100%;
-  border-radius: 14px;
+  border-radius: 0;
   border: 1px solid var(--line);
   background: var(--light-bg);
   padding: 12px 12px;
@@ -942,7 +942,7 @@
 
 .formSuccess {
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 0;
   background: rgba(52, 168, 83, 0.1);
   border: 1px solid #34A853;
   color: #34A853;
@@ -953,7 +953,7 @@
 
 .formError {
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 0;
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid #ef4444;
   color: #ef4444;
