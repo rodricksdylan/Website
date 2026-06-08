@@ -2,27 +2,22 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  gap: 40px;
   height: 48px;
-  padding: 4px 56px 4px 24px;
-  border-radius: 9999px;
-  border: none;
-  background: var(--gradient-primary);
+  padding: 0 16px 0 16px;
+  border-radius: 0;
+  border: 1px solid var(--primary);
+  background: var(--primary);
   color: var(--white);
   font: 600 14px/1 var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   text-decoration: none;
   cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(35, 102, 240, 0.22);
-  transition:
-    padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.5s ease,
-    transform 0.3s ease;
+  transition: background 0.18s ease, border-color 0.18s ease;
 }
 
 .iconBtn:hover {
-  padding: 4px 24px 4px 56px;
-  box-shadow: 0 16px 40px rgba(35, 102, 240, 0.32);
-  transform: translateY(-1px);
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
 }
 
 .label {
@@ -31,26 +26,18 @@
   white-space: nowrap;
 }
 
+/* keep the .circle span as a plain icon slot (no circle, no slide) */
 .circle {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--primary-dark);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition:
-    right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--white);
+  background: transparent;
+  transition: transform 0.18s ease;
 }
 
 .iconBtn:hover .circle {
-  right: calc(100% - 44px);
-  transform: rotate(45deg);
+  transform: translateX(3px);
 }
 
 .icon {
@@ -59,9 +46,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .iconBtn, .circle {
-    transition: none;
-  }
-  .iconBtn:hover { padding: 4px 56px 4px 24px; transform: none; }
-  .iconBtn:hover .circle { right: 4px; transform: none; }
+  .iconBtn, .circle { transition: none; }
+  .iconBtn:hover .circle { transform: none; }
 }
