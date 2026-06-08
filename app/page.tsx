@@ -68,20 +68,20 @@ export default function HomePage() {
                 InsurAI puts insurance-augmented AI right inside your workflow&mdash;so brokers spend less time digging through policies and more time advising clients.
               </p>
             </div>
-            <div className={styles.grid3}>
-              <div className={styles.card}>
+            <div className={styles.valueGrid}>
+              <div className={styles.valueCell}>
                 <h3 className={styles.h3}>Insurance-augmented intelligence</h3>
                 <p className={styles.muted}>
                   Models augmented specifically for broker workflows&mdash;from policy insights to coverage questions.
                 </p>
               </div>
-              <div className={styles.card}>
+              <div className={styles.valueCell}>
                 <h3 className={styles.h3}>Human in the loop</h3>
                 <p className={styles.muted}>
                   You stay in control. InsurAI surfaces the answer and its source&mdash;you make the call.
                 </p>
               </div>
-              <div className={styles.card}>
+              <div className={styles.valueCell}>
                 <h3 className={styles.h3}>Built for broker workflows</h3>
                 <p className={styles.muted}>
                   Ask in plain language and get answers across long policy documents&mdash;no portal hopping.
@@ -93,12 +93,6 @@ export default function HomePage() {
 
         {/* Products */}
         <section className={styles.section} id="products">
-          <div className={styles.geometricBg}>
-            <div className={styles.shape1}></div>
-            <div className={styles.shape2}></div>
-            <div className={styles.shape3}></div>
-            <div className={styles.shape4}></div>
-          </div>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
               <h2 className={styles.h2}>Products</h2>
