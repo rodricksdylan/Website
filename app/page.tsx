@@ -41,7 +41,7 @@ export default function HomePage() {
                 <ul className={styles.ticks}>
                   <li>Broker systems interface</li>
                   <li>Insurance-augmented AI intelligence</li>
-                  <li>Precision document &amp; data extraction</li>
+                  <li>Precise data extraction from documents</li>
                 </ul>
               </div>
 
@@ -57,7 +57,7 @@ export default function HomePage() {
         <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <h2 className={styles.h2}>Built for the way brokers work</h2>
+              <h2 className={styles.h2}>Built for brokers, by a broker</h2>
               <p className={styles.muted}>
                 InsurAI puts insurance-augmented AI right inside your workflow&mdash;so brokers spend less time digging through policies and more time advising clients.
               </p>
@@ -78,7 +78,7 @@ export default function HomePage() {
               <div className={styles.valueCell}>
                 <h3 className={styles.h3}>Built for broker workflows</h3>
                 <p className={styles.muted}>
-                  Ask in plain language and get answers across long policy documents&mdash;no portal hopping.
+                  Ask in plain language and get answers across complex and large policy documents&mdash;no portal hopping.
                 </p>
               </div>
             </div>
@@ -89,9 +89,9 @@ export default function HomePage() {
         <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <h2 className={styles.h2}>InsurAI brings insurance knowledge into the workflow</h2>
+              <h2 className={styles.h2}>InsurAI integrates insurance-augmented AI with your current workflow</h2>
               <p className={styles.muted}>
-                Our platform helps teams search approved insurance material, compare product
+                Our platform helps teams scour approved insurance material, compare product
                 information, prepare submissions, and move through quote and renewal workflows
                 with more confidence.
               </p>
@@ -143,7 +143,7 @@ export default function HomePage() {
         {/* Product Showcases */}
         <ProductShowcase
           title="PolicyAI"
-          description="A conversational assistant that helps brokers extract and work with policy information instantly—fewer tabs, faster answers, better advice. Ask questions across long policy documents and get instant insights."
+          description="A conversational assistant that helps brokers extract and work with policy information instantly—fewer tabs, faster answers, better advice. Ask questions across complex and large policy documents and get instant insights."
           imageSrc="/images/policyai dashboard.png"
           imageAlt="PolicyAI Interface"
           primaryCta={{ label: "Open PolicyAI", href: "https://www.policyai.com.au", external: true }}
@@ -189,7 +189,7 @@ export default function HomePage() {
             <div className={styles.sectionHead}>
               <h2 className={styles.h2}>Built for insurance workflows, not generic chat</h2>
               <p className={styles.muted}>
-                Insurance work isn&rsquo;t just answering questions. Brokers interpret client requests, check policy wording, follow insurer rules, spot missing information, compare options, and complete actions accurately. So InsurAI is built around a structured insurance decision engine&mdash;not a generic document chatbot. The rules and knowledge steps are configured to each brokerage, so every firm gets an assistant shaped around its own way of working. Every broker request passes through our insurance workflow algorithm:
+                Insurance work isn&rsquo;t just answering questions. Brokers interpret client requests, check policy wording, follow insurer rules, spot missing information, compare options, and complete actions accurately. InsurAI is built around a structured insurance decision engine&mdash;not a generic document chatbot. The rules and knowledge steps are configured to each brokerage, so every firm gets an assistant shaped around its own way of working. Every broker request passes through our insurance workflow algorithm:
               </p>
             </div>
 
