@@ -1183,28 +1183,28 @@
 /* InsurAI Agent — in-development callout */
 .agentCard {
   position: relative;
-  border: 1px dashed rgba(35, 102, 240, 0.45);
-  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--primary);
+  border-radius: 0;
   padding: 40px;
-  background:
-    radial-gradient(720px 240px at 12% 0%, rgba(35, 102, 240, 0.07), transparent 60%),
-    var(--white);
-  box-shadow: var(--shadow-sm);
+  background: var(--grey-50);
+  box-shadow: none;
 }
 
 .agentBadge {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--primary);
-  background: rgba(35, 102, 240, 0.1);
-  border: 1px solid rgba(35, 102, 240, 0.25);
-  padding: 5px 12px;
-  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  border-radius: 0;
   margin-bottom: 16px;
 }
 
