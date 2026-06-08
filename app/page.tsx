@@ -161,7 +161,7 @@ export default function HomePage() {
               </span>
               <h2 className={styles.h2}>InsurAI Agent</h2>
               <p className={styles.agentLead}>
-                The orchestration layer for your brokerage. The Agent ties policy intelligence, your firm&rsquo;s rules, and your data into one assistant that acts across the whole broking workflow&mdash;quoting, renewals, endorsements and more.
+                The orchestration layer for your brokerage. The Agent ties policy intelligence, your firm&rsquo;s rules, and your data into one assistant that acts across the entire broking&mdash;quoting, renewals, endorsements and more.
               </p>
               <p className={styles.muted}>
                 We&rsquo;re looking for brokerages to partner with us on an early-access pilot. You get a first-mover advantage and a real say in how it&rsquo;s built; we get real-world feedback to shape it. A genuine win for your firm and for us.
@@ -189,7 +189,7 @@ export default function HomePage() {
             <div className={styles.sectionHead}>
               <h2 className={styles.h2}>Built for insurance workflows, not generic chat</h2>
               <p className={styles.muted}>
-                Insurance work isn&rsquo;t just answering questions. Brokers interpret client requests, check policy wording, follow insurer rules, spot missing information, compare options, and complete actions accurately. InsurAI is built around a structured insurance decision engine&mdash;not a generic document chatbot. The rules and knowledge steps are configured to each brokerage, so every firm gets an assistant shaped around its own way of working. Every broker request passes through our insurance workflow algorithm:
+                Insurance work isn&rsquo;t just answering questions. Brokers interpret client requests, check policy wording, follow insurer rules, spot missing information, compare options, and complete actions accurately. InsurAI is built around a structured insurance decision engine&mdash;not a generic document chatbot. The rules and knowledge steps are configured to each brokerage, so every firm gets an assistant moulded as per its requirement. Every broker request passes through our insurance workflow algorithm:
               </p>
             </div>
 

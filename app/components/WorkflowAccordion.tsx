@@ -30,7 +30,7 @@ const Execute = (
 );
 
 const items = [
-  { id: "1", icon: Understand, question: "Understand the request", answer: "InsurAI first identifies what the broker is trying to do — get a quote, process a renewal, request an endorsement, compare policy options, check a condition, or find missing underwriting information — before trying to answer." },
+  { id: "1", icon: Understand, question: "Understand the request", answer: "InsurAI first identifies the broker's task — get a quote, process a renewal, request an endorsement, compare policy options, check a condition, or find missing underwriting information — before trying to answer." },
   { id: "2", icon: Rules, question: "Apply your brokerage's rules", answer: "Configured per firm. InsurAI applies your brokerage's own logic — your insurer panel, product set, mandatory underwriting questions, referral triggers, and compliance requirements — so it works the way your firm works, not a generic template." },
   { id: "3", icon: Retrieve, question: "Retrieve your firm's knowledge", answer: "InsurAI searches your trusted material — your policy wordings, insurer guides, product rules, and underwriting criteria — instead of guessing. Your rules and knowledge become an advantage no competitor can copy." },
   { id: "4", icon: Reason, question: "Reason through the next step", answer: "It combines the request, the applicable rules, and the retrieved information to work out the best next step: explain a condition, compare options, highlight gaps, prepare a summary, or flag items for human review." },
