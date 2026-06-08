@@ -180,10 +180,7 @@ export default function HomePage() {
               </ul>
 
               <div className={styles.heroCta}>
-                <IconButton href="#contact">Partner on the pilot</IconButton>
-                <a className={`${styles.btn} ${styles.btnGhost}`} href="#contact">
-                  Request early access
-                </a>
+                <IconButton href="#contact">Request early access</IconButton>
               </div>
             </div>
           </div>
