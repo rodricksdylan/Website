@@ -403,13 +403,13 @@
 }
 
 .logoBox {
-  border: 1px dashed var(--line);
-  border-radius: 14px;
+  border: 1px solid var(--line);
+  border-radius: 0;
   padding: 24px;
   text-align: center;
   color: var(--light-text);
-  background: var(--light-bg);
-  font-weight: 750;
+  background: var(--white);
+  font-weight: 600;
   font-size: 13px;
   display: flex;
   align-items: center;
@@ -852,15 +852,16 @@
 .ctaCard {
   margin-top: 18px;
   display: flex;
-  gap: 16px;
+  gap: 24px;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 18px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(35, 102, 240, 0.2);
-  background: radial-gradient(800px 200px at 10% 0%, rgba(35, 102, 240, 0.08), transparent 60%), var(--white);
-  box-shadow: var(--shadow-sm);
+  padding: 40px;
+  border-radius: 0;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--primary);
+  background: var(--grey-50);
+  box-shadow: none;
 }
 
 /* contact */
