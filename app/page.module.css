@@ -779,6 +779,47 @@
   .valueCell { padding: 28px; }
 }
 
+/* Solution 3-layer diagram */
+.layerStack {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 24px;
+}
+.layer {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 32px 36px;
+}
+.layer:nth-child(2) {
+  background: var(--grey-50);
+}
+.layerTag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.layerText {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--dark);
+}
+@media (max-width: 760px) {
+  .layer {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 24px;
+  }
+}
+
 /* steps */
 .steps { 
   display: grid; 

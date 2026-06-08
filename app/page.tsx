@@ -91,6 +91,41 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Solution — 3-layer diagram. EDIT COPY below. */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.sectionHead}>
+              <h2 className={styles.h2}>InsurAI brings insurance knowledge into the workflow</h2>
+              <p className={styles.muted}>
+                Our platform helps teams search approved insurance material, compare product
+                information, prepare submissions, and move through quote and renewal workflows
+                with more confidence.
+              </p>
+            </div>
+
+            <div className={styles.layerStack}>
+              <div className={styles.layer}>
+                <span className={styles.layerTag}>Knowledge layer</span>
+                <p className={styles.layerText}>
+                  Policy wordings, underwriting notes, product guides, brokerage knowledge
+                </p>
+              </div>
+              <div className={styles.layer}>
+                <span className={styles.layerTag}>Intelligence layer</span>
+                <p className={styles.layerText}>
+                  AI assistants that retrieve, structure, compare, summarise, and prepare information
+                </p>
+              </div>
+              <div className={styles.layer}>
+                <span className={styles.layerTag}>Control layer</span>
+                <p className={styles.layerText}>
+                  Broker review, source visibility, workflow checkpoints, and human approval
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Products */}
         <section className={styles.section} id="products">
           <div className={styles.container}>
