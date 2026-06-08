@@ -217,6 +217,17 @@
 .hero .ticks li { color: rgba(255, 255, 255, 0.9); }
 .hero .ticks li::before { content: ""; }
 
+/* Ghost CTA must read on the dark hero */
+.hero .btnGhost {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--line-dark);
+}
+.hero .btnGhost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
 .heroGrid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
