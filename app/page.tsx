@@ -170,7 +170,7 @@ export default function HomePage() {
                 The orchestration layer for your brokerage. The Agent ties policy intelligence, your firm&rsquo;s rules, and your data into one assistant that acts across the whole broking workflow&mdash;quoting, renewals, endorsements and more.
               </p>
               <p className={styles.muted}>
-                We&rsquo;re looking for one brokerage to partner with us on an early-access pilot. You get a first-mover advantage and a real say in how it&rsquo;s built; we get real-world feedback to shape it. A genuine win for your firm and for us.
+                We&rsquo;re looking for brokerages to partner with us on an early-access pilot. You get a first-mover advantage and a real say in how it&rsquo;s built; we get real-world feedback to shape it. A genuine win for your firm and for us.
               </p>
 
               <ul className={styles.ticks}>
