@@ -38,6 +38,12 @@ export default function HomePage() {
                   </a>
                 </div>
 
+                {/* EDIT COPY: hero supporting line */}
+                <div className={styles.heroTag}>
+                  <span className={styles.heroTagDot} />
+                  AI-assisted. Broker-approved.
+                </div>
+
                 <ul className={styles.ticks}>
                   <li>Broker systems interface</li>
                   <li>Insurance-augmented AI intelligence</li>
