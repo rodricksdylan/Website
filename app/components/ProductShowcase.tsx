@@ -102,13 +102,6 @@ export default function ProductShowcase({
 
           {/* Visual Block with Floating Image */}
           <div className={styles.visualBlock}>
-            {/* Background Shapes - Behind Image */}
-            <div className={styles.bgShapes}>
-              <div className={`${styles.bgShapePrimary} ${titleColorCombo === 'consentai' ? styles.bgShapeGreen : ''} ${titleColorCombo === 'policyai' ? styles.bgShapeGold : ''} ${titleColorCombo === 'jordanai' ? styles.bgShapePurple : ''}`}></div>
-              <div className={`${styles.bgShapeSecondary} ${titleColorCombo === 'consentai' ? styles.bgShapeGreen : ''} ${titleColorCombo === 'policyai' ? styles.bgShapeGold : ''} ${titleColorCombo === 'jordanai' ? styles.bgShapePurple : ''}`}></div>
-              <div className={`${styles.bgShapeTertiary} ${titleColorCombo === 'consentai' ? styles.bgShapeGreen : ''} ${titleColorCombo === 'policyai' ? styles.bgShapeGold : ''} ${titleColorCombo === 'jordanai' ? styles.bgShapePurple : ''}`}></div>
-            </div>
-
             {/* Floating Product Image */}
             <div className={styles.imagesContainer}>
               <div 
