@@ -5,7 +5,7 @@ import { SiteLayout } from "./components/SiteLayout";
 import ProductShowcase from "./components/ProductShowcase";
 import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
-import HeroSphere from "./components/HeroSphere";
+import WorkflowDiagram from "./components/WorkflowDiagram";
 import IconButton from "./components/IconButton";
 import WorkflowAccordion from "./components/WorkflowAccordion";
 
@@ -53,7 +53,7 @@ export default function HomePage() {
 
               {/* Hero visual */}
               <div className={styles.heroVisual} aria-hidden="true">
-                <HeroSphere />
+                <WorkflowDiagram />
               </div>
             </div>
           </div>
