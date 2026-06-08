@@ -343,25 +343,6 @@
   z-index: 0;
 }
 
-.heroTag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 28px;
-  padding: 6px 12px;
-  border: 1px solid var(--line-dark);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-}
-.heroTagDot {
-  width: 7px;
-  height: 7px;
-  background: var(--primary-light);
-}
-
 .heroImageWrapper {
   position: relative;
   z-index: 1;
