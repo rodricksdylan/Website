@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>InsurAI — One-page flyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0b0f17; --ink2:#111722;
+    --blue:#2366f0; --blue-light:#5b8dff;
+    --grey:#f4f4f5; --white:#fff;
+    --text:#161616; --muted:#525252;
+    --line:rgba(0,0,0,.12); --line-dark:rgba(255,255,255,.14);
+    --mono: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  @page{ size:A4; margin:0; }
+  html,body{
+    font-family:"Inter","Segoe UI",system-ui,Arial,sans-serif;
+    color:var(--text);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    width:210mm; height:297mm; overflow:hidden;
+    display:flex; flex-direction:column;
+    position:relative;
+  }
+
+  /* ---------------- HERO (dark) ---------------- */
+  .hero{
+    background:var(--ink); color:#fff;
+    padding:9mm 11mm 8mm;
+    position:relative; overflow:hidden;
+  }
+  .hero::before{ /* subtle technical grid */
+    content:""; position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:9mm 9mm;
+    -webkit-mask-image:radial-gradient(120% 100% at 80% 0%,#000 30%,transparent 80%);
+    mask-image:radial-gradient(120% 100% at 80% 0%,#000 30%,transparent 80%);
+  }
+  .hero > *{position:relative;}
+  .topbar{display:flex; justify-content:space-between; align-items:center;}
+  .brand{font-size:18px; font-weight:800; letter-spacing:-.02em;}
+  .brand b{color:var(--blue-light); font-weight:800;}
+  .award{
+    font-family:var(--mono); font-size:8px; letter-spacing:.08em; text-transform:uppercase;
+    color:#fff; border:1px solid var(--line-dark); padding:4px 8px; display:inline-flex; align-items:center; gap:6px;
+  }
+  .award i{width:6px;height:6px;background:var(--blue-light);display:inline-block;}
+  .eyebrow{
+    font-family:var(--mono); font-size:8.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--blue-light); margin:8mm 0 3mm;
+  }
+  .h1{ font-size:27px; line-height:1.06; letter-spacing:-.03em; font-weight:700; max-width:150mm; }
+  .sub{ font-size:11px; line-height:1.5; color:rgba(255,255,255,.72); margin-top:3.5mm; max-width:135mm; }
+
+  /* workflow strip */
+  .flow{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:6.5mm; }
+  .node{ position:relative; padding:3mm 3mm 3mm 0; }
+  .node .idx{ font-family:var(--mono); font-size:8px; color:var(--blue-light); letter-spacing:.06em; }
+  .node .nt{ font-size:10.5px; font-weight:600; color:#fff; margin-top:2px; }
+  .node .nc{ font-size:8px; color:rgba(255,255,255,.5); margin-top:1px; line-height:1.35; }
+  .node:not(:last-child)::after{
+    content:""; position:absolute; top:5mm; right:5mm; width:8px; height:8px;
+    border-top:1px solid var(--blue-light); border-right:1px solid var(--blue-light);
+    transform:rotate(45deg);
+  }
+  .node .bar{ height:1px; background:var(--line-dark); margin-bottom:3mm; position:relative; }
+  .node .bar::before{ content:""; position:absolute; left:0; top:0; height:1px; width:14px; background:var(--blue); }
+
+  /* ---------------- BODY ---------------- */
+  .body{ flex:1; padding:7mm 11mm 0; display:flex; flex-direction:column; gap:5mm; }
+  .seclabel{ font-family:var(--mono); font-size:8px; letter-spacing:.16em; text-transform:uppercase; color:var(--blue); }
+  .h2{ font-size:14px; font-weight:700; letter-spacing:-.02em; margin-top:2px; color:var(--text); }
+
+  /* 3 value cells */
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:3mm; }
+  .cell{ background:#fff; padding:4mm; }
+  .cell h3{ font-size:10.5px; font-weight:700; margin-bottom:1.5mm; }
+  .cell p{ font-size:9px; line-height:1.5; color:var(--muted); }
+
+  /* highlight strip */
+  .quote{
+    background:var(--grey); border:1px solid var(--line); border-left:3px solid var(--blue);
+    padding:4mm 5mm; font-size:13px; font-weight:700; letter-spacing:-.01em;
+  }
+  .quote span{ color:var(--blue); }
+
+  /* products */
+  .prod{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+  .panel{ border:1px solid var(--line); padding:4mm; display:flex; flex-direction:column; }
+  .ptag{ display:inline-flex; align-items:center; gap:5px; font-family:var(--mono); font-size:7.5px; letter-spacing:.08em; text-transform:uppercase; border:1px solid var(--line); padding:2px 6px; align-self:flex-start; }
+  .ptag i{width:6px;height:6px;border-radius:50%;display:inline-block;}
+  .dot-live{background:#2ea043;} .dot-dev{background:#d4a017;}
+  .panel h3{ font-size:13px; font-weight:700; margin:2.5mm 0 1.5mm; }
+  .panel h3 em{ font-style:normal; color:#d4a017; } /* PolicyAI mark */
+  .panel p{ font-size:9px; line-height:1.5; color:var(--muted); }
+  .panel .url{ font-family:var(--mono); font-size:8px; color:var(--blue); margin-top:auto; padding-top:2.5mm; }
+
+  /* use cases */
+  .grid6{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:3mm; }
+  .uc{ background:#fff; padding:3.5mm; }
+  .uc .idx{ font-family:var(--mono); font-size:8px; color:var(--blue); }
+  .uc h4{ font-size:9.5px; font-weight:700; margin-top:1mm; }
+
+  .diff{ font-size:9.5px; color:var(--muted); display:flex; gap:5mm; flex-wrap:wrap; }
+  .diff b{ color:var(--text); font-weight:600; }
+  .diff i{ color:var(--blue); font-style:normal; }
+
+  /* partner strip */
+  .partners{ display:flex; align-items:center; gap:6mm; padding:4mm 11mm; border-top:1px solid var(--line); }
+  .partners .plabel{ font-size:8.5px; font-weight:600; color:var(--muted); white-space:nowrap; }
+  .partners .logos{ display:flex; gap:5mm; align-items:center; flex:1; justify-content:flex-end; }
+  .partners img{ height:13mm; width:auto; object-fit:contain; }
+
+  /* ---------------- FOOTER (dark) ---------------- */
+  .foot{ background:var(--ink); color:rgba(255,255,255,.72); padding:6mm 11mm; display:flex; justify-content:space-between; align-items:center; gap:6mm; }
+  .foot .fbrand{ font-size:14px; font-weight:800; color:#fff; }
+  .foot .fbrand b{ color:var(--blue-light); }
+  .foot .tag{ font-size:9px; color:rgba(255,255,255,.6); margin-top:1mm; }
+  .foot .meta{ font-family:var(--mono); font-size:8px; color:rgba(255,255,255,.7); line-height:1.7; text-align:right; }
+  .foot .cta{ background:var(--blue); color:#fff; font-size:11px; font-weight:600; padding:4mm 6mm; white-space:nowrap; display:inline-flex; align-items:center; gap:8px; }
+  .foot .cta::after{ content:"→"; }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="topbar">
+        <div class="brand">Insur<b>AI</b></div>
+        <div class="award"><i></i>Winner · PitchLIVE26 — Insurtech Australia</div>
+      </div>
+
+      <div class="eyebrow">The AI operating layer for insurance broking</div>
+      <h1 class="h1">An orchestration platform to help you run a smarter brokerage.</h1>
+      <p class="sub">Give your brokers an AI assistant that reads every policy — instant answers, fewer tabs, and better advice for your clients. AI does the searching, structuring and drafting; brokers keep judgement, advice and final approval.</p>
+
+      <div class="flow">
+        <div class="node"><div class="bar"></div><div class="idx">01</div><div class="nt">Policy knowledge</div><div class="nc">Wordings, guides, brokerage knowledge</div></div>
+        <div class="node"><div class="bar"></div><div class="idx">02</div><div class="nt">AI assistants</div><div class="nc">Retrieve, structure, compare, summarise</div></div>
+        <div class="node"><div class="bar"></div><div class="idx">03</div><div class="nt">Broker review</div><div class="nc">Source visibility, human approval</div></div>
+        <div class="node"><div class="bar"></div><div class="idx">04</div><div class="nt">Client outcome</div><div class="nc">Faster, consistent, broker-led advice</div></div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="body">
+
+      <section>
+        <div class="seclabel">Why InsurAI</div>
+        <div class="h2">Built for the way brokers work</div>
+        <div class="grid3">
+          <div class="cell"><h3>Insurance-augmented intelligence</h3><p>Augmented specifically for broker workflows — from policy insights to coverage questions.</p></div>
+          <div class="cell"><h3>Human in the loop</h3><p>InsurAI surfaces the answer and its source. You stay in control and make the call.</p></div>
+          <div class="cell"><h3>Built for broker workflows</h3><p>Ask in plain language across long policy documents — no portal hopping.</p></div>
+        </div>
+      </section>
+
+      <div class="quote">AI prepares the work. <span>Brokers make the call.</span></div>
+
+      <section>
+        <div class="seclabel">Products</div>
+        <div class="h2">Conversational policy intelligence today — orchestration on the way</div>
+        <div class="prod">
+          <div class="panel">
+            <span class="ptag"><i class="dot-live"></i>PolicyAI · Live</span>
+            <h3>Policy<em>AI</em></h3>
+            <p>A conversational assistant that helps brokers extract and work with policy information instantly — fewer tabs, faster answers, better advice across long documents.</p>
+            <div class="url">policyai.com.au</div>
+          </div>
+          <div class="panel">
+            <span class="ptag"><i class="dot-dev"></i>InsurAI Agent · In development</span>
+            <h3>InsurAI Agent</h3>
+            <p>The orchestration layer that ties policy intelligence, your firm's rules and your data into one assistant acting across quoting, renewals and endorsements. We're partnering with brokerages on an early-access pilot.</p>
+            <div class="url">Request early access →</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="seclabel">Use cases</div>
+        <div class="h2">Designed around real broking workflows</div>
+        <div class="grid6">
+          <div class="uc"><div class="idx">01</div><h4>Policy research</h4></div>
+          <div class="uc"><div class="idx">02</div><h4>Renewal preparation</h4></div>
+          <div class="uc"><div class="idx">03</div><h4>Insurer comparison</h4></div>
+          <div class="uc"><div class="idx">04</div><h4>Underwriting question support</h4></div>
+          <div class="uc"><div class="idx">05</div><h4>Quote workflow assistance</h4></div>
+          <div class="uc"><div class="idx">06</div><h4>Internal knowledge support</h4></div>
+        </div>
+      </section>
+
+      <section class="diff">
+        <span><i>Not a generic chatbot —</i></span>
+        <span><b>Grounded in insurance knowledge</b></span>
+        <span><b>Designed for broker workflows</b></span>
+        <span><b>Built with human review</b></span>
+      </section>
+
+    </main>
+
+    <!-- PARTNERS -->
+    <div class="partners">
+      <div class="plabel">Proudly building from Hobart, Tasmania</div>
+      <div class="logos">
+        <img src="file:///C:/Users/rodri/website/public/images/MEMBER_rectangle.png" alt="Member" />
+        <img src="file:///C:/Users/rodri/website/public/images/Tasmanian-Proud-Partner--Pos-PRIMARY.png" alt="Tasmanian Proud Partner" />
+        <img src="file:///C:/Users/rodri/website/public/images/uac-proud-member.jpg" alt="UAC Proud Member" />
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <div>
+        <div class="fbrand">Insur<b>AI</b></div>
+        <div class="tag">AI-powered broking. Broker-led decisions.</div>
+      </div>
+      <div class="meta">
+        contact@insurai.com.au<br/>
+        Hobart, Tasmania · linkedin.com/company/insur-ai
+      </div>
+      <div class="cta">Request early access</div>
+    </footer>
+
+  </div>
+</body>
+</html>
