@@ -14,7 +14,14 @@ npm run dev        # serves on http://localhost:3000 (or next free port)
 Note: the user also runs a separate app on **localhost:3000/3001** ("InsurAI — Insurance Management"), so this dev server usually lands on **3002+**.
 
 ## Where the site stands
-The site is on the **original (pre-cofounder) design** — light-blue theme, Three.js wireframe-sphere hero, Inter/Open Sans, blue pill CTAs, blue "AI" wordmark. The cofounder redesign was built then fully reverted earlier today; only **content/structure** changes were kept and iterated on.
+**2026-06-08 — Carbon-inspired restyle applied** (this branch, not merged). The homepage + shared shell were retheme­d to an IBM-Carbon-inspired enterprise look:
+- **Theme:** light site with a **dark (ink #0b0f17) hero and footer**, white/grey body, brand blue `#2366f0` kept as accent, **sharp corners** (`--radius: 0`), hairline dividers, flat surfaces (gradients/soft shadows removed), Inter + system-mono labels.
+- **Hero visual:** Three.js sphere replaced by a new CSS/SVG `WorkflowDiagram` component (Policy knowledge → AI assistants → Broker review → Client outcome). `HeroSphere.tsx` is kept but unused on home.
+- **New sections:** a 3-layer Knowledge/Intelligence/Control diagram (after value props) and a 6-block use-cases grid (after "Why this matters").
+- Spec: `docs/superpowers/specs/2026-06-08-carbon-restyle-design.md`; plan: `docs/superpowers/plans/2026-06-08-carbon-restyle.md`.
+- `npm run build` passes; dev served on 3001 during the work.
+
+Prior state (for reference): the **original (pre-cofounder) design** — light-blue theme, Three.js wireframe-sphere hero, Inter/Open Sans, blue pill CTAs, blue "AI" wordmark. The cofounder redesign was built then fully reverted; only content/structure changes were kept before this restyle.
 
 ### Homepage section order (`app/page.tsx`)
 1. **Announcement banner** — "Winner — PitchLIVE26 (Insurtech Australia)"
