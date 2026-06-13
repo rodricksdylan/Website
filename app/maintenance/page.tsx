@@ -76,7 +76,7 @@ export default function MaintenancePage() {
         </p>
 
         <a
-          href="mailto:rodricksdylan@gmail.com"
+          href="mailto:contact@insurai.com.au"
           style={{
             display: 'inline-block',
             padding: '13px 26px',
