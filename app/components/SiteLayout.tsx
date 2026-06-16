@@ -4,7 +4,7 @@ import styles from "../page.module.css";
 import { MobileNav } from "./MobileNav";
 import IconButton from "./IconButton";
 
-type CurrentPage = "home" | "media" | "about";
+type CurrentPage = "home" | "media" | "about" | "partnerships";
 
 interface SiteLayoutProps {
   children: React.ReactNode;
@@ -34,6 +34,13 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
               </Link>
               <Link href="/#contact" className={currentPage === "home" ? undefined : ""}>
                 Contact
+              </Link>
+              <Link
+                href="/partnerships"
+                className={currentPage === "partnerships" ? styles.navActive : ""}
+                aria-current={currentPage === "partnerships" ? "page" : undefined}
+              >
+                Partnerships
               </Link>
               <Link
                 href="/about"
@@ -81,6 +88,7 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
               <Link href="/#why">Why</Link>
               <Link href="/#how">How</Link>
               <Link href="/#contact">Contact</Link>
+              <Link href="/partnerships">Partnerships</Link>
               <Link href="/about">About</Link>
               <Link href="/media">In the Media</Link>
               <Link href="/privacy">Privacy</Link>

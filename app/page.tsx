@@ -7,6 +7,7 @@ import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
 import HeroSphere from "./components/HeroSphere";
 import IconButton from "./components/IconButton";
+import WorkflowAccordion from "./components/WorkflowAccordion";
 
 export default function HomePage() {
   return (
@@ -24,10 +25,10 @@ export default function HomePage() {
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <h1 className={styles.h1}>
-                  AI-powered insurance workflows&mdash;without the portal hopping.
+                  InsurAI is an orchestration platform designed to help you run a smarter brokerage
                 </h1>
                 <p className={styles.lead}>
-                  Transform your brokerage with intelligent, purpose-built tools for insurance. Improve compliance, reduce manual work, and deliver a smoother client experience.
+                  Give your brokers an AI assistant that reads every policy&mdash;instant answers, fewer tabs, and better advice for your clients.
                 </p>
 
                 <div className={styles.heroCta}>
@@ -39,8 +40,8 @@ export default function HomePage() {
 
                 <ul className={styles.ticks}>
                   <li>Broker systems interface</li>
-                  <li>Insurance-tuned AI intelligence</li>
-                  <li>Precision document &amp; data extraction</li>
+                  <li>Insurance-augmented AI intelligence</li>
+                  <li>Precise data extraction from documents</li>
                 </ul>
               </div>
 
@@ -52,70 +53,277 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Value props */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.sectionHead}>
+              <h2 className={styles.h2}>Built for brokers, by a broker</h2>
+              <p className={styles.muted}>
+                InsurAI puts insurance-augmented AI right inside your workflow&mdash;so brokers spend less time digging through policies and more time advising clients.
+              </p>
+            </div>
+            <div className={styles.valueGrid}>
+              <div className={styles.valueCell}>
+                <h3 className={styles.h3}>Insurance-augmented intelligence</h3>
+                <p className={styles.muted}>
+                  Models augmented specifically for broker workflows&mdash;from policy insights to coverage questions.
+                </p>
+              </div>
+              <div className={styles.valueCell}>
+                <h3 className={styles.h3}>Human in the loop</h3>
+                <p className={styles.muted}>
+                  You stay in control. InsurAI surfaces the answer and its source&mdash;you make the call.
+                </p>
+              </div>
+              <div className={styles.valueCell}>
+                <h3 className={styles.h3}>Built for broker workflows</h3>
+                <p className={styles.muted}>
+                  Ask in plain language and get answers across complex and large policy documents&mdash;no portal hopping.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Solution — 3-layer diagram. EDIT COPY below. */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.sectionHead}>
+              <h2 className={styles.h2}>InsurAI integrates insurance-augmented AI with your current workflow</h2>
+              <p className={styles.muted}>
+                Our platform helps teams scour approved insurance material, compare product
+                information, prepare submissions, and move through quote and renewal workflows
+                with more confidence.
+              </p>
+            </div>
+
+            <div className={styles.layerStack}>
+              <div className={styles.layer}>
+                <span className={styles.layerTag}>Knowledge layer</span>
+                <p className={styles.layerText}>
+                  Policy wordings, underwriting notes, product guides, brokerage knowledge
+                </p>
+              </div>
+              <div className={styles.layer}>
+                <span className={styles.layerTag}>Intelligence layer</span>
+                <p className={styles.layerText}>
+                  AI assistants that retrieve, structure, compare, summarise, and prepare information
+                </p>
+              </div>
+              <div className={styles.layer}>
+                <span className={styles.layerTag}>Control layer</span>
+                <p className={styles.layerText}>
+                  Broker review, source visibility, workflow checkpoints, and human approval
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Products */}
         <section className={styles.section} id="products">
-          <div className={styles.geometricBg}>
-            <div className={styles.shape1}></div>
-            <div className={styles.shape2}></div>
-            <div className={styles.shape3}></div>
-            <div className={styles.shape4}></div>
-          </div>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
               <h2 className={styles.h2}>Products</h2>
-              <p className={styles.muted}>Start with compliance automation today. Add AI policy intelligence next.</p>
+              <p className={styles.muted}>Conversational AI policy intelligence today&mdash;and an orchestration agent on the way.</p>
+              <div className={styles.statusRow}>
+                <span className={styles.statusPill}>
+                  <span className={`${styles.statusDot} ${styles.dotLive}`} />
+                  PolicyAI &middot; Live
+                </span>
+                <span className={styles.statusPill}>
+                  <span className={`${styles.statusDot} ${styles.dotDev}`} />
+                  InsurAI Agent &middot; In development
+                </span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Product Showcases */}
         <ProductShowcase
-          title="ConsentAI"
-          description="Your complete consent-compliance platform: automated requests, real-time tracking, clear audit trails, and broker-friendly workflows. Transform how you manage consent requests with intelligent automation."
-          imageSrc="/images/consent ai dashboard.png"
-          imageAlt="ConsentAI Dashboard Interface"
-          primaryCta={{ label: "Open ConsentAI", href: "https://www.consentai.com.au/", external: true }}
-          secondaryCta={{ label: "Request pricing", href: "https://www.consentai.com.au/pricing", external: true }}
-          titleColorCombo="consentai"
-          chatImageSrc="/images/consentai-chat.png"
-          chatImageAlt="ConsentAI Chat Interface"
-          chatDescription="Use the AI chat assistant to quickly get answers about consent requests, compliance requirements, and workflow guidance. Simply ask questions in natural language and receive instant, accurate information to help you manage consent requests more efficiently."
-        />
-
-        <ProductShowcase
           title="PolicyAI"
-          description="A conversational assistant that helps brokers extract and work with policy information instantly—fewer tabs, faster answers, better advice. Ask questions across long policy documents and get instant insights."
+          description="A conversational assistant that helps brokers extract and work with policy information instantly—fewer tabs, faster answers, better advice. Ask questions across complex and large policy documents and get instant insights."
           imageSrc="/images/policyai dashboard.png"
           imageAlt="PolicyAI Interface"
-          reverse={true}
           primaryCta={{ label: "Open PolicyAI", href: "https://www.policyai.com.au", external: true }}
           secondaryCta={{ label: "See how it works", href: "https://www.policyai.com.au/features", external: true }}
           titleColorCombo="policyai"
         />
 
+        {/* InsurAI Agent — in development */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.agentCard}>
+              <span className={styles.agentBadge}>
+                <span className={styles.agentBadgeDot} />
+                In development
+              </span>
+              <h2 className={styles.h2}>InsurAI Agent</h2>
+              <p className={styles.agentLead}>
+                The orchestration layer for your brokerage. The Agent ties policy intelligence, your firm&rsquo;s rules, and your data into one assistant that acts across the entire broking&mdash;quoting, renewals, endorsements and more.
+              </p>
+              <p className={styles.muted}>
+                We&rsquo;re looking for brokerages to partner with us on an early-access pilot. You get a first-mover advantage and a real say in how it&rsquo;s built; we get real-world feedback to shape it. A genuine win for your firm and for us.
+              </p>
+
+              <ul className={styles.ticks}>
+                <li>Early access to the orchestration technology</li>
+                <li>Shaped around your firm&rsquo;s own rules and data</li>
+                <li>Partner pricing while we build it together</li>
+              </ul>
+
+              <div className={styles.heroCta}>
+                <IconButton href="#contact">Request early access</IconButton>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why */}
         <WhySection />
 
-        {/* How */}
+        {/* How it works — insurance decision engine */}
         <section className={styles.section} id="how">
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <h2 className={styles.h2}>How It Works</h2>
+              <h2 className={styles.h2}>Built for insurance workflows, not generic chat</h2>
+              <p className={styles.muted}>
+                Insurance work isn&rsquo;t just answering questions. Brokers interpret client requests, check policy wording, follow insurer rules, spot missing information, compare options, and complete actions accurately. InsurAI is built around a structured insurance decision engine&mdash;not a generic document chatbot. The rules and knowledge steps are configured to each brokerage, so every firm gets an assistant moulded as per its requirement. Every broker request passes through our insurance workflow algorithm:
+              </p>
             </div>
 
-            <div className={styles.steps}>
+            <WorkflowAccordion />
+          </div>
+        </section>
+
+        {/* Why this matters */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.sectionHead}>
+              <h2 className={styles.h2}>Why this matters</h2>
+              <p className={styles.muted}>
+                Generic AI tools can read documents and produce answers. InsurAI is designed to understand insurance workflows, not just generating a response. That&rsquo;s what makes it different.
+              </p>
+            </div>
+
+            <div className={styles.featGrid}>
               {[
-                ["Insurance-Tuned Language Models", "Our models are trained and optimised specifically for insurance workflows, enabling accurate responses—from policy insights to consent auditing."],
-                ["Interactive Chat Interfaces", "Navigate your workflows using a conversational assistant that understands and executes your requests. From managing consents today to retrieving policy insights tomorrow, everything is at your fingertips."],
-              ].map(([t, d], i) => (
-                <div className={styles.step} key={t}>
-                  <div className={styles.stepNum}>{i + 1}</div>
-                  <div>
-                    <h3 className={styles.h3}>{t}</h3>
-                    <p className={styles.muted}>{d}</p>
+                {
+                  t: "Insurance domain logic",
+                  d: "Purpose-built rules for how broking actually works.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z" /><path d="M9 12l2 2 4-4" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "Structured workflow rules",
+                  d: "Each request follows the right steps, in the right order.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="4" width="6" height="6" rx="1" /><rect x="15" y="14" width="6" height="6" rx="1" /><path d="M9 7h6a3 3 0 0 1 3 3v4" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "Retrieval from trusted sources",
+                  d: "Answers grounded in policy wordings and insurer material.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z" /><path d="M4 19a2 2 0 0 1 2-2h12" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "AI reasoning",
+                  d: "Works out next best step, not just a reply.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="6" y="6" width="12" height="12" rx="2" /><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "Human review where needed",
+                  d: "Flags items for a broker to confirm before acting.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M16 11l2 2 4-4" />
+                    </svg>
+                  ),
+                },
+                {
+                  t: "Action-ready outputs",
+                  d: "Quote info, renewal notes, and summaries ready to use.",
+                  icon: (
+                    <svg className={styles.featIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M9 15l2 2 4-4" />
+                    </svg>
+                  ),
+                },
+              ].map((f) => (
+                <div className={styles.featCell} key={f.t}>
+                  <div className={styles.featCellHead}>
+                    {f.icon}
+                    <h3 className={styles.featTitle}>{f.t}</h3>
                   </div>
+                  <p className={styles.featText}>{f.d}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Use cases. EDIT COPY in the array below. */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.sectionHead}>
+              <h2 className={styles.h2}>Designed around real broking workflows</h2>
+              <p className={styles.muted}>
+                InsurAI supports the day-to-day work brokers already do &mdash; faster, and with
+                the source in view.
+              </p>
+            </div>
+            <div className={styles.useGrid}>
+              {[
+                { t: "Policy research", d: "Find and interpret wording across long documents in plain language." },
+                { t: "Renewal preparation", d: "Pull the context and prior terms together ahead of each renewal." },
+                { t: "Insurer comparison", d: "Compare product information side by side from approved material." },
+                { t: "Underwriting question support", d: "Draft well-formed questions grounded in the relevant policy." },
+                { t: "Quote workflow assistance", d: "Prepare submissions and move through quoting with more confidence." },
+                { t: "Internal knowledge support", d: "Surface your brokerage's own knowledge when your team needs it." },
+              ].map((u, i) => (
+                <div className={styles.useCell} key={u.t}>
+                  <span className={styles.useIndex}>{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className={styles.useTitle}>{u.t}</h3>
+                  <p className={styles.useText}>{u.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.ctaCard}>
+              <div>
+                <h2 className={styles.h2}>Give every broker an AI policy expert</h2>
+                <p className={styles.muted}>See how PolicyAI answers complex policy questions in seconds.</p>
+              </div>
+              <div className={styles.heroCta}>
+                <IconButton href="#contact">Contact sales</IconButton>
+                <a
+                  className={`${styles.btn} ${styles.btnGhost}`}
+                  href="https://www.policyai.com.au"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open PolicyAI
+                </a>
+              </div>
             </div>
           </div>
         </section>
