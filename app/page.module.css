@@ -1218,6 +1218,10 @@
 }
 
 /* extra breathing room above the Agent callout CTA */
+.agentCard .ticks {
+  margin-top: 24px;
+}
+
 .agentCard .heroCta {
   margin-top: 28px;
 }
