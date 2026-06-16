@@ -1033,10 +1033,16 @@
 }
 
 @media (max-width: 760px) {
-  .nav { 
-    display: none; 
+  .nav {
+    display: none;
   }
-  
+
+  /* hide redundant header "Contact sales" button on mobile —
+     the hamburger menu already includes a Contact sales CTA */
+  .actions > a {
+    display: none;
+  }
+
   .grid2 { 
     grid-template-columns: 1fr; 
   }
