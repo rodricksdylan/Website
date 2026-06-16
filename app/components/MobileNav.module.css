@@ -6,7 +6,7 @@
 .burger {
   width: 42px;
   height: 42px;
-  border-radius: 12px;
+  border-radius: 0;
   border: 1px solid var(--line);
   background: var(--white);
   cursor: pointer;
@@ -34,7 +34,7 @@
   top: 52px;
   width: min(320px, calc(100vw - 40px));
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 0;
   background: var(--white);
   backdrop-filter: blur(14px);
   padding: 12px;
@@ -58,7 +58,7 @@
 
 .panel a {
   padding: 10px 12px;
-  border-radius: 12px;
+  border-radius: 0;
   background: var(--light-bg);
   color: var(--light-text);
   font-weight: 650;
@@ -81,7 +81,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 0;
   padding: 10px 14px;
   font-weight: 700;
   font-size: 14px;
@@ -90,15 +90,17 @@
 }
 
 .btnPrimary {
-  background: var(--gradient-primary);
+  background: var(--primary);
   color: var(--white);
-  border: none;
-  box-shadow: 0 12px 30px rgba(35, 102, 240, 0.22);
+  border: 1px solid var(--primary);
+  box-shadow: none;
 }
 
 .btnPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 40px rgba(35, 102, 240, 0.3);
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: none;
+  box-shadow: none;
 }
 
 .btnGhost {

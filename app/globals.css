@@ -1,28 +1,43 @@
 :root {
-  /* Original light theme colors */
+  /* Brand blue (kept for continuity) */
   --primary: #2366f0;
   --primary-dark: #1a4fc4;
-  --primary-light: #4d85f5;
-  --dark: #111827;
-  --light-bg: #f0f5ff;
-  --light-bg-gradient: linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%);
-  --text: #333;
-  --light-text: #6b7280;
+  --primary-light: #5b8dff;        /* blue for use on dark surfaces */
+
+  /* Carbon-inspired surfaces */
+  --ink: #0b0f17;                  /* dark hero / footer band */
+  --ink-2: #111722;               /* raised panels on dark */
   --white: #ffffff;
-  --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
-  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  
-  /* New variables for Atlassian layout (using light theme colors) */
-  --bg: var(--light-bg);
+  --grey-50: #f4f4f5;             /* alt section background */
+  --grey-100: #e8e8ea;
+
+  /* Text */
+  --dark: #161616;
+  --text: #161616;
+  --light-text: #525252;
+
+  /* Hairlines */
+  --line: rgba(0, 0, 0, 0.12);
+  --line-dark: rgba(255, 255, 255, 0.14);
+
+  /* Compatibility aliases (existing components read these) */
+  --bg: var(--grey-50);
   --muted: var(--light-text);
-  --line: rgba(0, 0, 0, 0.08);
   --accent: var(--primary);
   --accent2: var(--primary);
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  --radius: 18px;
-  --max: 1120px;
+  --light-bg: var(--grey-50);
+  --light-bg-gradient: var(--white);
+
+  /* Flattened gradients/shadows — restyles many components via the cascade */
+  --gradient-primary: var(--primary);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.10);
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+
+  /* Geometry */
+  --radius: 0px;
+  --max: 1200px;
 }
 
 * {
@@ -32,11 +47,12 @@
 }
 
 html, body {
-  background: var(--light-bg-gradient);
+  background: var(--white);
   color: var(--text);
   line-height: 1.6;
-  font-family: var(--font-open-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {

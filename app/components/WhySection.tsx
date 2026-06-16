@@ -40,7 +40,7 @@ const categories: Category[] = [
     id: 'intelligence',
     label: 'Intelligence',
     title: 'AI-powered insights',
-    description: 'Get instant answers from policy documents, extract key information, and surface insights with insurance-tuned AI.',
+    description: 'Get instant answers from policy documents, extract key information, and surface insights with insurance-augmented AI.',
     cta: 'Learn more about Intelligence',
     imageSrc: '/images/policy ai intelligent answer.png',
     imageAlt: 'Policy AI Intelligent Answer',
