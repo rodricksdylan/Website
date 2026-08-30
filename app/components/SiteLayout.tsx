@@ -43,13 +43,6 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
                 Partnerships
               </Link>
               <Link
-                href="/about"
-                className={currentPage === "about" ? styles.navActive : ""}
-                aria-current={currentPage === "about" ? "page" : undefined}
-              >
-                About
-              </Link>
-              <Link
                 href="/media"
                 className={currentPage === "media" ? styles.navActive : ""}
                 aria-current={currentPage === "media" ? "page" : undefined}
@@ -89,7 +82,6 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
               <Link href="/#how">How</Link>
               <Link href="/#contact">Contact</Link>
               <Link href="/partnerships">Partnerships</Link>
-              <Link href="/about">About</Link>
               <Link href="/media">In the Media</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>

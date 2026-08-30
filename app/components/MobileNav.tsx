@@ -46,7 +46,6 @@ export function MobileNav() {
           <Link href="/#how" onClick={() => setOpen(false)}>How it works</Link>
           <Link href="/#contact" onClick={() => setOpen(false)}>Contact</Link>
           <Link href="/partnerships" onClick={() => setOpen(false)}>Partnerships</Link>
-          <Link href="/about" onClick={() => setOpen(false)}>About</Link>
           <Link href="/media" onClick={() => setOpen(false)}>In the Media</Link>
 
           <div className={styles.cta}>
