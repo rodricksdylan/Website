@@ -108,12 +108,12 @@ export default function ContactForm() {
         />
       </label>
       <label className={styles.label}>
-        What do you want to automate?
+        Tell us about your brokerage
         <textarea
           className={styles.textarea}
           name="message"
           rows={4}
-          placeholder="e.g., pre-renewal consents, chasing forms, audit trails..."
+          placeholder="e.g., team size, systems you use, where time goes..."
           required
         />
       </label>
