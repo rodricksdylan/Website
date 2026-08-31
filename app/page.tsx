@@ -387,6 +387,7 @@ export default function HomePage() {
                     style={{ maxWidth: '100%', height: 'auto', objectFit: 'contain' }}
                   />
                 </div>
+                {/* Hidden for now — UAC proud member logo
                 <div className={styles.logoBox}>
                   <Image
                     src="/images/uac-proud-member.jpg"
@@ -396,6 +397,7 @@ export default function HomePage() {
                     style={{ maxWidth: '100%', height: 'auto', objectFit: 'contain' }}
                   />
                 </div>
+                */}
               </div>
             </div>
           </div>
