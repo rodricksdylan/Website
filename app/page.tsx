@@ -53,6 +53,24 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Explainer video */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.videoWrap}>
+              <video
+                className={styles.video}
+                src="/video/insurai-explainer.mp4"
+                poster="/video/insurai-explainer-poster.jpg"
+                controls
+                playsInline
+                preload="metadata"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
         {/* Value props */}
         <section className={styles.section}>
           <div className={styles.container}>
