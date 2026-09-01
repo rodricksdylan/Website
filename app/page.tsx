@@ -5,7 +5,8 @@ import { SiteLayout } from "./components/SiteLayout";
 import ProductShowcase from "./components/ProductShowcase";
 import ContactForm from "./components/ContactForm";
 import WhySection from "./components/WhySection";
-import HeroSphere from "./components/HeroSphere";
+import HeroVisual from "./components/HeroVisual";
+import ExplainerVideo from "./components/ExplainerVideo";
 import IconButton from "./components/IconButton";
 import WorkflowAccordion from "./components/WorkflowAccordion";
 
@@ -47,7 +48,7 @@ export default function HomePage() {
 
               {/* Hero visual */}
               <div className={styles.heroVisual} aria-hidden="true">
-                <HeroSphere />
+                <HeroVisual />
               </div>
             </div>
           </div>
@@ -57,16 +58,11 @@ export default function HomePage() {
         <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.videoWrap}>
-              <video
-                className={styles.video}
+              <ExplainerVideo
                 src="/video/insurai-explainer.mp4"
                 poster="/video/insurai-explainer-poster.webp"
-                controls
-                playsInline
-                preload="metadata"
-              >
-                Your browser does not support the video tag.
-              </video>
+                label="Play the InsurAI explainer video"
+              />
             </div>
           </div>
         </section>

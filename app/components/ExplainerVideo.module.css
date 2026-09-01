@@ -1,0 +1,51 @@
+.video,
+.poster {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+}
+
+.trigger {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: #000;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  padding-left: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.trigger:hover .play {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: #fff;
+}
+
+.trigger:focus-visible {
+  outline: 3px solid var(--brand, #2366f0);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .play {
+    transition: none;
+  }
+}

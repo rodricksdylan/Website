@@ -151,7 +151,35 @@ export default function HeroSphere() {
       renderer.render(scene, camera);
       frameId = requestAnimationFrame(animate);
     };
-    frameId = requestAnimationFrame(animate);
+
+    // Only burn frames while the sphere is actually on screen and the tab is
+    // in the foreground — it used to render continuously for the whole session.
+    let onScreen = true;
+    const start = () => {
+      if (!frameId && onScreen && !document.hidden) {
+        frameId = requestAnimationFrame(animate);
+      }
+    };
+    const stop = () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+        frameId = 0;
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        onScreen = entry.isIntersecting;
+        onScreen ? start() : stop();
+      },
+      { rootMargin: "100px" }
+    );
+    observer.observe(mount);
+
+    const handleVisibility = () => (document.hidden ? stop() : start());
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    start();
 
     const handleResize = () => {
       camera.aspect = mount.clientWidth / mount.clientHeight;
@@ -173,7 +201,9 @@ export default function HeroSphere() {
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      cancelAnimationFrame(frameId);
+      stop();
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibility);
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
       if (renderer.domElement.parentNode === mount) {
