@@ -60,7 +60,7 @@ export default function HomePage() {
               <video
                 className={styles.video}
                 src="/video/insurai-explainer.mp4"
-                poster="/video/insurai-explainer-poster.jpg"
+                poster="/video/insurai-explainer-poster.webp"
                 controls
                 playsInline
                 preload="metadata"

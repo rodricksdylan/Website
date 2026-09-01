@@ -130,6 +130,7 @@ export default function ProductShowcase({
                       alt={imageAlt}
                       width={1600}
                       height={900}
+                      sizes="(max-width: 900px) 92vw, (max-width: 1200px) 45vw, 540px"
                       className={styles.productImage}
                       priority
                     />
@@ -140,6 +141,7 @@ export default function ProductShowcase({
                     alt={imageAlt}
                     width={1600}
                     height={900}
+                    sizes="(max-width: 900px) 92vw, (max-width: 1200px) 45vw, 540px"
                     className={styles.productImage}
                     priority
                   />

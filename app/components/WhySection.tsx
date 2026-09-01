@@ -103,6 +103,7 @@ export default function WhySection() {
                   alt={currentCategory.imageAlt}
                   width={1200}
                   height={675}
+                  sizes="(max-width: 900px) 92vw, (max-width: 1200px) 45vw, 540px"
                   className={styles.featureImage}
                   priority={selectedCategory === categories[0].id}
                 />
