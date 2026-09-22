@@ -60,6 +60,17 @@ Prior state (for reference): the **original (pre-cofounder) design** — light-b
 - Partner logos are referenced via `file:///` absolute paths to `public/images/`. To verify the PDF, open it with the Read tool (it renders pages). Re-render after editing the HTML.
 - Mirrors homepage copy (kept in sync: "Built for brokers, by a broker"; "complex and large documents").
 
+## Technical SEO layer — NEW 2026-09-22
+- **Base URL `https://insurai.com.au`** is now set as `metadataBase` in `app/layout.tsx`; all canonicals/OG URLs resolve from it.
+- **Titles:** layout uses `default` + `%s | InsurAI` template. Child pages set bare titles ("Partnerships", "In the Media", "About", "Terms of Service", "Privacy Policy") — don't include "| InsurAI" in page titles or it doubles up.
+- **Every page** now exports `metadata` with its own description + `alternates.canonical` + openGraph block (`app/page.tsx`, `partnerships`, `media`, `about`, `terms`, `privacy`).
+- **`app/opengraph-image.tsx`** — generated 1200×630 branded card (ink gradient, Insur/AI wordmark in `#5b8dff`). **Must keep `export const runtime = 'edge'`** — the default node runtime crashes `next build` on Windows with `TypeError: Invalid URL` inside `next/og`.
+- **`app/sitemap.ts` / `app/robots.ts`** — serve `/sitemap.xml` (6 URLs) and `/robots.txt` (allow all + sitemap pointer). Add new routes to the sitemap when created.
+- **JSON-LD** in `app/layout.tsx` — Organization (InsurAI Pty Ltd, Hobart TAS, LinkedIn sameAs) + WebSite graph.
+- **`/about` is now live** — renamed from `app/_about` (the `_` prefix had opted it out of routing, so it 404'd). Linked in the footer (not header nav); `SiteLayout` `CurrentPage` already had `"about"`.
+- Verified end-to-end with `npm run build` + `next start`: all routes 200, OG/Twitter/canonical/JSON-LD present in served HTML, OG image renders (72 KB PNG).
+- Not done (deliberately out of scope): favicon/app icon (no logo asset exists — text wordmark only), GA4, `@vercel/speed-insights`.
+
 ## Components added (all ported to CSS Modules — no Tailwind/shadcn introduced)
 - `app/components/WorkflowAccordion.tsx` (+ `.module.css`) — React state + CSS grid-rows animation, inline SVG icons.
 - Bordered features grid — inline in `page.tsx` using `.featGrid` styles in `page.module.css`.

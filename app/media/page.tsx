@@ -1,8 +1,22 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { SiteLayout } from "../components/SiteLayout";
 import { InsuranceNewsLogo } from "./InsuranceNewsLogo";
 import { newsItems, type NewsItem } from "@/lib/media-content";
 import styles from "./media.module.css";
+
+export const metadata: Metadata = {
+  title: "In the Media",
+  description:
+    "News, articles, and podcast appearances from InsurAI — AI-powered insurance technology built for insurance brokers.",
+  alternates: { canonical: "/media" },
+  openGraph: {
+    title: "In the Media | InsurAI",
+    description:
+      "News, articles, and podcast appearances from InsurAI — AI-powered insurance technology built for insurance brokers.",
+    url: "/media",
+  },
+};
 
 function formatDate(dateStr: string): string {
   if (!dateStr) return "";

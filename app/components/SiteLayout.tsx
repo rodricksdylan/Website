@@ -83,6 +83,7 @@ export function SiteLayout({ children, currentPage = "home" }: SiteLayoutProps) 
               <Link href="/#contact">Contact</Link>
               <Link href="/partnerships">Partnerships</Link>
               <Link href="/media">In the Media</Link>
+              <Link href="/about">About</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>
             </div>

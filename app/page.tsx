@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import styles from "./page.module.css";
 import { SiteLayout } from "./components/SiteLayout";
 import ProductShowcase from "./components/ProductShowcase";
@@ -9,6 +10,18 @@ import HeroVisual from "./components/HeroVisual";
 import ExplainerVideo from "./components/ExplainerVideo";
 import IconButton from "./components/IconButton";
 import WorkflowAccordion from "./components/WorkflowAccordion";
+
+export const metadata: Metadata = {
+  description:
+    "Give your brokers an AI assistant that reads every policy — instant answers, fewer tabs, and better advice for your clients. InsurAI is an orchestration platform purpose-built for insurance brokerages.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "InsurAI — AI-Powered Insurance Solutions for Insurance Brokers",
+    description:
+      "Give your brokers an AI assistant that reads every policy — instant answers, fewer tabs, and better advice for your clients.",
+    url: "/",
+  },
+};
 
 export default function HomePage() {
   return (

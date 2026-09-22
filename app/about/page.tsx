@@ -1,6 +1,20 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { SiteLayout } from "../components/SiteLayout";
 import styles from "./about.module.css";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Meet the team behind InsurAI — founded by professionals with deep experience across insurance, finance, healthcare, and AI, united by a mission to modernise how the industry works.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | InsurAI",
+    description:
+      "Meet the team behind InsurAI — deep experience across insurance, finance, healthcare, and AI.",
+    url: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

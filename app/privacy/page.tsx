@@ -2,8 +2,9 @@ import { SiteLayout } from "../components/SiteLayout";
 import styles from "../legal.module.css";
 
 export const metadata = {
-  title: "Privacy Policy | InsurAI",
+  title: "Privacy Policy",
   description: "InsurAI Pty Ltd privacy policy.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

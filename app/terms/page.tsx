@@ -2,8 +2,9 @@ import { SiteLayout } from "../components/SiteLayout";
 import styles from "../legal.module.css";
 
 export const metadata = {
-  title: "Terms of Service | InsurAI",
+  title: "Terms of Service",
   description: "InsurAI Pty Ltd terms of service.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

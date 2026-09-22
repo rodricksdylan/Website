@@ -1,7 +1,21 @@
 import { SiteLayout } from "../components/SiteLayout";
 import IconButton from "../components/IconButton";
+import type { Metadata } from "next";
 import styles from "../page.module.css";
 import p from "./partnerships.module.css";
+
+export const metadata: Metadata = {
+  title: "Partnerships",
+  description:
+    "Partner with InsurAI to bring insurance-grade AI to your platform. We work with CRM and workflow providers, networks, underwriting agencies, and technology partners.",
+  alternates: { canonical: "/partnerships" },
+  openGraph: {
+    title: "Partnerships | InsurAI",
+    description:
+      "Bring insurance-grade AI to the tools brokers already use. Partner with InsurAI.",
+    url: "/partnerships",
+  },
+};
 
 export default function PartnershipsPage() {
   return (
