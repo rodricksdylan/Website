@@ -6,6 +6,12 @@
   "regions": ["syd1"],
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.insurai.com.au" }],
+      "destination": "https://insurai.com.au/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.insurai.com.au" }],
       "destination": "https://insurai.com.au/:path*",
